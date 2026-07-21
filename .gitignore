@@ -6,8 +6,9 @@ __pycache__/
 venv/
 env/
 
-# Database
+# Ignore all SQLite databases except the demo database
 *.db
+!bytenova.db
 
 # Uploads
 app/static/uploads/resumes/*
