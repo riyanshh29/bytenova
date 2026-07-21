@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Open Roles{% endblock %}
+
+{% block content %}
+<section class="page-header py-5 bg-light">
+    <div class="container">
+        <h1 class="fw-bold">Open Roles</h1>
+        <p class="lead text-muted">{{ jobs|length }} position{{ 's' if jobs|length != 1 else '' }} available</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <!-- Search & Filter Bar -->
+        <form method="GET" class="row g-3 mb-5 align-items-end">
+            <div class="col-md-4">
+                <label class="form-label small fw-semibold">Search</label>
+                <input type="text" class="form-control" name="q" value="{{ filters.q }}" placeholder="Job title or keyword...">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label small fw-semibold">Department</label>
+                <select class="form-select" name="department">
+                    <option value="">All Departments</option>
+                    {% for dept in departments %}
+                    <option value="{{ dept }}" {% if filters.department == dept %}selected{% endif %}>{{ dept }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label small fw-semibold">Job Type</label>
+                <select class="form-select" name="job_type">
+                    <option value="">All Types</option>
+                    {% for jt in job_types %}
+                    <option value="{{ jt }}" {% if filters.job_type == jt %}selected{% endif %}>{{ jt }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel me-1"></i>Filter</button>
+            </div>
+        </form>
+
+        <!-- Job Listings -->
+        <div class="row g-4">
+            {% for job in jobs %}
+            <div class="col-12">
+                <div class="card job-list-card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-primary-subtle text-primary">{{ job.department }}</span>
+                                    <span class="badge bg-light text-dark">{{ job.job_type }}</span>
+                                </div>
+                                <h4 class="fw-bold mb-2">
+                                    <a href="{{ url_for('jobs.job_detail', job_id=job.id) }}" class="text-decoration-none text-dark">
+                                        {{ job.title }}
+                                    </a>
+                                </h4>
+                                <p class="text-muted mb-2">
+                                    <i class="bi bi-geo-alt me-1"></i>{{ job.location }}
+                                    {% if job.salary_range %}
+                                    &nbsp;·&nbsp;<i class="bi bi-currency-rupee me-1"></i>{{ job.salary_range }}
+                                    {% endif %}
+                                </p>
+                                <p class="text-muted small mb-0">{{ job.description[:200] }}...</p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <small class="text-muted d-block mb-2">Posted {{ job.created_at.strftime('%b %d, %Y') }}</small>
+                                <a href="{{ url_for('jobs.job_detail', job_id=job.id) }}" class="btn btn-primary">View & Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-inbox fs-1 text-muted"></i>
+                <p class="text-muted mt-3">No jobs match your filters. Try adjusting your search.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

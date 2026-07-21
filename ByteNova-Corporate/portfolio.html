@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ByteNova Technologies portfolio — Showcasing our completed projects in web, mobile, AI, cloud, and enterprise solutions." />
+  <title>Portfolio — ByteNova Technologies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-content"><div class="loading-logo">ByteNova</div><div class="loading-spinner"></div><div class="loading-text">Loading</div></div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar" id="siteNavbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand"><span class="brand-icon">BN</span> ByteNova</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 data-aos="fade-up">Our Portfolio</h1>
+      <p data-aos="fade-up" data-aos-delay="80">Real projects, real results — showcasing our expertise across industries and technologies.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <!-- Filters -->
+      <div class="filter-buttons" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="80">
+        <div class="project-card filter-item" data-category="web" style="display: block;">
+          <div class="project-image"><i class="fas fa-hospital"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">Web</span>
+            <h3>Hospital Management System</h3>
+            <p>Comprehensive patient management, scheduling, billing, and role-based access for a 200-bed multi-specialty hospital.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Python</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Flask</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">PostgreSQL</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> MediCare Hospital Network | <strong>Duration:</strong> 4 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="mobile" style="display: block;">
+          <div class="project-image"><i class="fas fa-shopping-cart"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">Mobile</span>
+            <h3>E-Commerce Mobile App</h3>
+            <p>Full-featured mobile shopping app with real-time inventory, payment integration, and AI-powered recommendations.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Flutter</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Firebase</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Razorpay</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> Smart Retail India | <strong>Duration:</strong> 5 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="ai" style="display: block;">
+          <div class="project-image"><i class="fas fa-chart-line"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">AI</span>
+            <h3>Predictive Analytics Platform</h3>
+            <p>AI-powered BI platform with real-time dashboards, predictive forecasting, and automated insights for retail chains.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">TensorFlow</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Python</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Power BI</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> RetailMax Group | <strong>Duration:</strong> 6 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="enterprise" style="display: block;">
+          <div class="project-image"><i class="fas fa-university"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">Enterprise</span>
+            <h3>College ERP System</h3>
+            <p>End-to-end educational management platform handling admissions, attendance, grades, fees, and library management.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">React</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Node.js</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">MongoDB</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> EduExcel Group | <strong>Duration:</strong> 7 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="ai" style="display: block;">
+          <div class="project-image"><i class="fas fa-robot"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">AI</span>
+            <h3>AI Customer Support Chatbot</h3>
+            <p>Intelligent conversational AI system supporting multiple languages with sentiment analysis and automated ticket routing.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">OpenAI</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">LangChain</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Node.js</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> TechEdge Solutions | <strong>Duration:</strong> 3 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="cloud" style="display: block;">
+          <div class="project-image"><i class="fas fa-cloud-upload-alt"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">Cloud</span>
+            <h3>Cloud Migration & Infrastructure</h3>
+            <p>Complete cloud migration of legacy systems to AWS with 35% cost optimization, auto-scaling, and disaster recovery.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">AWS</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Docker</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Kubernetes</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> CloudFirst Finance | <strong>Duration:</strong> 4 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="web" style="display: block;">
+          <div class="project-image"><i class="fas fa-utensils"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">Web</span>
+            <h3>Restaurant POS & Management</h3>
+            <p>Modern point-of-sale system with table management, kitchen display, inventory tracking, and daily sales analytics.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">JavaScript</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Python</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">SQLite</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> Indore Foods | <strong>Duration:</strong> 3 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="mobile" style="display: block;">
+          <div class="project-image"><i class="fas fa-truck"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">Mobile</span>
+            <h3>Logistics Tracking App</h3>
+            <p>Real-time shipment tracking, route optimization, driver management, and delivery confirmation with GPS integration.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">React Native</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Firebase</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Google Maps</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> ShipFast Logistics | <strong>Duration:</strong> 5 Months</p>
+          </div>
+        </div>
+
+        <div class="project-card filter-item" data-category="enterprise" style="display: block;">
+          <div class="project-image"><i class="fas fa-users-cog"></i><div class="project-overlay"><a href="#" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a></div></div>
+          <div class="project-body">
+            <span class="project-category">Enterprise</span>
+            <h3>HR Management Portal</h3>
+            <p>Complete HR platform with leave management, payroll integration, performance reviews, and employee self-service.</p>
+            <div class="tech-tags" style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Flask</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">SQLAlchemy</span>
+              <span style="padding: 4px 10px; border-radius: 50px; background: rgba(37,99,235,0.06); font-size: 0.75rem;">Bootstrap</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--bn-gray); margin-top: 8px;"><strong>Client:</strong> TalentFirst HR | <strong>Duration:</strong> 4 Months</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--bn-gradient-1); padding: 80px 0;">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 style="color: white; font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Have a Project in Mind?</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 30px;">Let's build something amazing together. Share your requirements and we'll create a solution that works for you.</p>
+      <a href="contact.html" class="btn btn-light btn-lg"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><span class="brand-icon">BN</span><span>ByteNova Technologies</span></div>
+          <p class="footer-about">Building Smart Software for Growing Businesses.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#software">Software Development</a></li><li><a href="services.html#web">Web Development</a></li><li><a href="services.html#ai">AI & ML</a></li><li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Crystal IT Park, Indore</li>
+            <li><i class="fas fa-phone-alt"></i> +91 731 400 1234</li>
+            <li><i class="fas fa-envelope"></i> hello@bytenova.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ByteNova Technologies. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+  <a href="https://wa.me/917314001234" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}Services — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5 hero-sub">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7" data-aos="fade-up">
+        <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+          <i class="bi bi-gear-fill me-1"></i> Services
+        </div>
+        <h1 class="display-6 fw-bold text-white mt-3">Built for startups and SMEs</h1>
+        <p class="lead text-white opacity-90 mt-3 mb-0">
+          We deliver modern Python development, AI automation, REST APIs, business dashboards, and full-stack web solutions—fast, secure, and maintainable.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="{{ url_for('main.portfolio') }}" class="btn btn-light btn-lg px-4">
+            <i class="bi bi-briefcase-fill me-2"></i> See Portfolio
+          </a>
+          <a href="{{ url_for('main.contact') }}" class="btn btn-gradient btn-lg px-4">
+            <i class="bi bi-envelope-fill me-2"></i> Contact Us
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="card border-0 shadow-lg services-hero-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <div class="small text-muted">Delivery approach</div>
+                <div class="fw-bold">Milestones you can track</div>
+              </div>
+              <i class="bi bi-check2-circle text-primary" style="font-size:2rem"></i>
+            </div>
+            <hr />
+            <ul class="check-list mb-0">
+              <li><i class="bi bi-check2-circle"></i> Requirement discussion → scope clarity</li>
+              <li><i class="bi bi-check2-circle"></i> Planning &amp; architecture</li>
+              <li><i class="bi bi-check2-circle"></i> Development and frequent demos</li>
+              <li><i class="bi bi-check2-circle"></i> Testing &amp; deployment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" id="services-grid">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+      <div>
+        <h2 class="section-title mb-1">Our Services</h2>
+        <p class="text-muted mb-0">Every engagement includes communication, quality checks, and reliable delivery.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <a href="{{ url_for('main.service_detail', slug='python-development') }}" class="text-decoration-none">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-filetype-py"></i></div>
+            <h5>Python Development</h5>
+            <p>Automations, backend services, and production-ready Python solutions.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+        <a href="{{ url_for('main.service_detail', slug='web-development') }}" class="text-decoration-none">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-window"></i></div>
+            <h5>Custom Web Applications</h5>
+            <p>Responsive web apps and dashboards tailored to your operations.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+        <a href="{{ url_for('main.service_detail', slug='ai-automation') }}" class="text-decoration-none">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-cpu"></i></div>
+            <h5>AI Automation</h5>
+            <p>Practical AI workflows that help teams save time and reduce manual work.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <a href="{{ url_for('main.service_detail', slug='rest-apis') }}" class="text-decoration-none">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-code-slash"></i></div>
+            <h5>REST API Development</h5>
+            <p>Reliable APIs with clean design, performance considerations, and docs.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+        <a href="{{ url_for('main.service_detail', slug='dashboards') }}" class="text-decoration-none">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-bar-chart"></i></div>
+            <h5>Business Dashboards</h5>
+            <p>Actionable dashboards for sales, operations, finance and HR.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+        <a href="{{ url_for('main.service_detail', slug='desktop-applications') }}" class="text-decoration-none">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-display"></i></div>
+            <h5>Desktop Software</h5>
+            <p>Utility-grade desktop applications for internal teams.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7" data-aos="fade-up">
+        <h2 class="section-title mb-2">Why clients choose ByteNova</h2>
+        <p class="text-muted mb-0">Strong reasons that keep engagements smooth and outcomes solid.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end" data-aos="fade-left">
+        <a href="{{ url_for('main.contact') }}" class="btn btn-gradient btn-lg px-4"><i class="bi bi-rocket-fill me-2"></i> Start a project</a>
+      </div>
+    </div>
+    <div class="row g-4 mt-1">
+      <div class="col-md-6" data-aos="fade-up"><div class="feature-card"><i class="bi bi-cash-coin"></i><h5>Affordable Solutions</h5><p>Smart pricing for growing teams.</p></div></div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="80"><div class="feature-card"><i class="bi bi-lightning-charge-fill"></i><h5>Fast Delivery</h5><p>Short cycles and clear milestones.</p></div></div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="160"><div class="feature-card"><i class="bi bi-cpu-fill"></i><h5>Modern Technologies</h5><p>Maintainable stacks that scale.</p></div></div>
+      <div class="col-md-6" data-aos="fade-up"><div class="feature-card"><i class="bi bi-people-fill"></i><h5>Experienced Developers</h5><p>Practical expertise across Python & web.</p></div></div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="80"><div class="feature-card"><i class="bi bi-headset"></i><h5>Reliable Support</h5><p>Updates and quick fixes when needed.</p></div></div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="160"><div class="feature-card"><i class="bi bi-heart"></i><h5>Client First Approach</h5><p>Transparent communication and feedback loops.</p></div></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

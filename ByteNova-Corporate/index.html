@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ByteNova Technologies — India's trusted software development company delivering innovative, reliable, and scalable digital solutions for businesses." />
+  <meta name="keywords" content="ByteNova, software development, Indore, Python, AI, web development, mobile apps, IT solutions, India" />
+  <meta property="og:title" content="ByteNova Technologies — Building Smart Software for Growing Businesses" />
+  <meta property="og:description" content="Custom software, web, mobile, AI, and cloud solutions for Indian businesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bytenova.tech" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bytenova.tech" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-size='45' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3EBN%3C/text%3E%3C/svg%3E" />
+
+  <title>ByteNova Technologies — Custom Software Development Company</title>
+
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Custom Styles -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Loading Screen -->
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-content">
+      <div class="loading-logo">ByteNova</div>
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading</div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="siteNavbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" aria-label="ByteNova Home">
+        <span class="brand-icon">BN</span>
+        ByteNova
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks" role="menubar">
+        <a href="index.html" role="menuitem" aria-current="page">Home</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="services.html" role="menuitem">Services</a>
+        <a href="portfolio.html" role="menuitem">Portfolio</a>
+        <a href="team.html" role="menuitem">Team</a>
+        <a href="careers.html" role="menuitem">Careers</a>
+        <a href="contact.html" role="menuitem">Contact</a>
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+        <a href="contact.html" class="nav-cta" role="menuitem">
+          <i class="fas fa-paper-plane"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="main" role="banner">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <div class="hero-badge">
+          <i class="fas fa-rocket"></i> India's Emerging Software Development Partner
+        </div>
+        <h1 class="hero-title">
+          Building <span>Smart Software</span> for Growing Businesses
+        </h1>
+        <p class="hero-desc">
+          We deliver innovative, reliable, and scalable digital solutions — from custom software and web applications to AI-powered automation and cloud infrastructure — empowering startups and enterprises across India.
+        </p>
+        <div class="hero-buttons">
+          <a href="services.html" class="btn btn-primary">
+            <i class="fas fa-cogs"></i> Explore Services
+          </a>
+          <a href="portfolio.html" class="btn btn-secondary">
+            <i class="fas fa-briefcase"></i> View Portfolio
+          </a>
+          <a href="contact.html" class="btn btn-secondary">
+            <i class="fas fa-envelope"></i> Contact Us
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <h4><i class="fas fa-layer-group"></i> Tech Stack</h4>
+            <span class="hero-card-badge">Modern</span>
+          </div>
+          <div class="hero-card-grid">
+            <div class="hero-card-item"><i class="fab fa-python"></i> Python</div>
+            <div class="hero-card-item"><i class="fab fa-react"></i> React</div>
+            <div class="hero-card-item"><i class="fas fa-database"></i> PostgreSQL</div>
+            <div class="hero-card-item"><i class="fab fa-aws"></i> AWS Cloud</div>
+            <div class="hero-card-item"><i class="fas fa-brain"></i> AI/ML</div>
+            <div class="hero-card-item"><i class="fab fa-docker"></i> Docker</div>
+          </div>
+          <div class="hero-timeline">
+            <div class="hero-timeline-item">
+              <div class="hero-timeline-dot"></div>
+              <span>Plan</span>
+            </div>
+            <div class="hero-timeline-item">
+              <div class="hero-timeline-dot"></div>
+              <span>Design</span>
+            </div>
+            <div class="hero-timeline-item">
+              <div class="hero-timeline-dot"></div>
+              <span>Develop</span>
+            </div>
+            <div class="hero-timeline-item">
+              <div class="hero-timeline-dot"></div>
+              <span>Deploy</span>
+            </div>
+            <div class="hero-timeline-item">
+              <div class="hero-timeline-dot"></div>
+              <span>Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Section -->
+  <section class="section section-bg" aria-label="Company statistics">
+    <div class="container">
+      <div class="stats-grid" data-aos="fade-up">
+        <div class="stat-card">
+          <div class="stat-number" data-count="2023">0</div>
+          <div class="stat-label">Founded</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="12">0</div>
+          <div class="stat-label">Team Members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="85">0</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="45">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="8">0</div>
+          <div class="stat-label">Cities Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" aria-label="Why choose ByteNova">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-star"></i> Why ByteNova</span>
+        <h2 class="section-title">Why Choose ByteNova Technologies?</h2>
+        <p class="section-desc">We combine technical excellence with business understanding to deliver solutions that drive real growth.</p>
+      </div>
+      <div class="values-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+          <h4>Innovation First</h4>
+          <p>We leverage cutting-edge technologies to build future-ready solutions that give your business a competitive edge.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>Quality & Security</h4>
+          <p>Every solution undergoes rigorous testing and follows industry-standard security practices to protect your data.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-handshake"></i></div>
+          <h4>Client Partnership</h4>
+          <p>We work as an extension of your team with transparent communication, regular updates, and shared goals.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-rocket"></i></div>
+          <h4>Fast Delivery</h4>
+          <p>Agile methodologies and rapid prototyping ensure your project moves from concept to launch with clear milestones.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-headset"></i></div>
+          <h4>Reliable Support</h4>
+          <p>Post-launch maintenance, updates, and 24/7 support ensure your software runs smoothly at all times.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-indian-rupee-sign"></i></div>
+          <h4>Affordable Excellence</h4>
+          <p>World-class software development at competitive pricing tailored for Indian startups and growing businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section-bg" id="services" aria-label="Our services">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-cogs"></i> Our Services</span>
+        <h2 class="section-title">Comprehensive IT Solutions</h2>
+        <p class="section-desc">From concept to deployment, we offer end-to-end technology services that transform your business.</p>
+      </div>
+      <div class="services-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3>Custom Software Development</h3>
+          <p>Tailored software solutions designed to automate workflows, improve efficiency, and solve your unique business challenges.</p>
+          <a href="services.html#software" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-globe"></i></div>
+          <h3>Web Development</h3>
+          <p>Responsive, SEO-optimized websites and web applications built with modern frameworks for performance and scalability.</p>
+          <a href="services.html#web" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile App Development</h3>
+          <p>Native and cross-platform mobile applications for iOS and Android that deliver exceptional user experiences.</p>
+          <a href="services.html#mobile" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>User-centered design that combines aesthetics with usability to create intuitive digital experiences.</p>
+          <a href="services.html#design" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-brain"></i></div>
+          <h3>AI & Machine Learning</h3>
+          <p>Intelligent automation, predictive analytics, and AI-powered solutions that give your business a data-driven advantage.</p>
+          <a href="services.html#ai" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Solutions</h3>
+          <p>Scalable cloud infrastructure, migration, and management services on AWS, Azure, and Google Cloud platforms.</p>
+          <a href="services.html#cloud" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-arrows-alt"></i></div>
+          <h3>DevOps</h3>
+          <p>CI/CD pipelines, infrastructure automation, and containerization to accelerate your development and deployment cycles.</p>
+          <a href="services.html#devops" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Data Analytics</h3>
+          <p>Transform raw data into actionable insights with custom dashboards, reporting tools, and business intelligence solutions.</p>
+          <a href="services.html#analytics" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-plug"></i></div>
+          <h3>API Integration</h3>
+          <p>Seamless integration of third-party APIs, payment gateways, and enterprise systems into your existing infrastructure.</p>
+          <a href="services.html#api" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Preview -->
+  <section class="section" id="portfolio" aria-label="Recent projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-briefcase"></i> Our Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-desc">A selection of projects demonstrating our expertise across industries and technologies.</p>
+      </div>
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-hospital"></i>
+            <div class="project-overlay">
+              <a href="portfolio.html" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Web</span>
+            <h3>Hospital Management System</h3>
+            <p>Comprehensive patient management, scheduling, billing, and role-based access for a multi-specialty hospital network.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="project-overlay">
+              <a href="portfolio.html" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Mobile</span>
+            <h3>E-Commerce Platform</h3>
+            <p>A full-featured mobile shopping app with real-time inventory, payment integration, and personalized recommendations.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-chart-line"></i>
+            <div class="project-overlay">
+              <a href="portfolio.html" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">AI</span>
+            <h3>Predictive Analytics Dashboard</h3>
+            <p>AI-powered business intelligence platform with real-time data visualization and predictive forecasting for retail chains.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-university"></i>
+            <div class="project-overlay">
+              <a href="portfolio.html" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Enterprise</span>
+            <h3>College ERP System</h3>
+            <p>End-to-end educational institution management platform covering admissions, attendance, grades, and fee management.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-robot"></i>
+            <div class="project-overlay">
+              <a href="portfolio.html" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">AI</span>
+            <h3>AI Chatbot Platform</h3>
+            <p>Intelligent conversational AI system for customer support automation across multiple channels and languages.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <div class="project-overlay">
+              <a href="portfolio.html" class="btn btn-light btn-sm"><i class="fas fa-external-link-alt"></i> View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Cloud</span>
+            <h3>Cloud Migration Suite</h3>
+            <p>End-to-end cloud migration and infrastructure optimization for a financial services firm serving 50,000+ customers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5" data-aos="fade-up">
+        <a href="portfolio.html" class="btn btn-primary"><i class="fas fa-briefcase"></i> View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-bg" id="testimonials" aria-label="Client testimonials">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-quote-right"></i> Testimonials</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-desc">Trusted by startups and enterprises across India to deliver technology solutions that make a difference.</p>
+      </div>
+      <div class="testimonials-slider" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card active">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"ByteNova Technologies transformed our outdated manual processes into a streamlined, automated system. Their team understood our requirements perfectly and delivered a solution that exceeded our expectations. The project was on time, on budget, and the post-launch support has been exceptional."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AR</div>
+            <div>
+              <div class="testimonial-name">Ananya Rao</div>
+              <div class="testimonial-role">CEO, Indore Foods Pvt. Ltd.</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"We partnered with ByteNova for our AI-powered analytics platform, and the results have been outstanding. Their expertise in machine learning and data engineering helped us build a product that our customers love. Highly recommend their team for any AI or data project."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TS</div>
+            <div>
+              <div class="testimonial-name">Tushar Sharma</div>
+              <div class="testimonial-role">CTO, TechEdge Solutions</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The mobile app ByteNova built for us has completely changed how our customers interact with our brand. The UI is beautiful, the performance is flawless, and our user engagement has increased by 200% since launch. They're truly a world-class development team based right here in India."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SR</div>
+            <div>
+              <div class="testimonial-name">Saanvi Raghav</div>
+              <div class="testimonial-role">Founder, Smart Retail India</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"ByteNova's cloud migration service helped us move our entire infrastructure to AWS with zero downtime. Their team handled the transition smoothly, optimized our costs by 35%, and continues to provide excellent managed services. A reliable technology partner for any growing business."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">VM</div>
+            <div>
+              <div class="testimonial-name">Vikram Mehta</div>
+              <div class="testimonial-role">Director, CloudFirst Finance</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Working with ByteNova on our ERP implementation was a fantastic experience. Their team took the time to understand our unique workflows and built a custom solution that our entire team loves. The training sessions and documentation were thorough, and the transition was seamless."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PD</div>
+            <div>
+              <div class="testimonial-name">Priya Deshmukh</div>
+              <div class="testimonial-role">VP Operations, EduExcel Group</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button class="testimonial-btn" id="testPrev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+        <button class="testimonial-btn" id="testNext" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="testimonial-dots">
+        <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+        <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+        <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+        <button class="testimonial-dot" data-index="3" aria-label="Testimonial 4"></button>
+        <button class="testimonial-dot" data-index="4" aria-label="Testimonial 5"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="section" aria-label="Our clients">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-building"></i> Our Clients</span>
+        <h2 class="section-title">Trusted by Leading Brands</h2>
+        <p class="section-desc">We've had the privilege of working with startups, SMEs, and enterprises across diverse industries.</p>
+      </div>
+      <div class="clients-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="client-logo">Indore Foods</div>
+        <div class="client-logo">TechEdge</div>
+        <div class="client-logo">Smart Retail</div>
+        <div class="client-logo">CloudFirst</div>
+        <div class="client-logo">EduExcel</div>
+        <div class="client-logo">MediCare Hub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack -->
+  <section class="section section-bg" aria-label="Technologies we use">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-microchip"></i> Technology Stack</span>
+        <h2 class="section-title">Modern Tools, Modern Solutions</h2>
+        <p class="section-desc">We leverage industry-leading technologies to build robust, scalable, and future-proof software.</p>
+      </div>
+      <div class="tech-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+        <div class="tech-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+        <div class="tech-item"><i class="fab fa-java"></i><span>Java</span></div>
+        <div class="tech-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+        <div class="tech-item"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+        <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+        <div class="tech-item"><i class="fab fa-angular"></i><span>Angular</span></div>
+        <div class="tech-item"><i class="fab fa-flutter"></i><span>Flutter</span></div>
+        <div class="tech-item"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
+        <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+        <div class="tech-item"><i class="fas fa-cloud"></i><span>Azure</span></div>
+        <div class="tech-item"><i class="fab fa-linux"></i><span>Linux</span></div>
+        <div class="tech-item"><i class="fas fa-shield-alt"></i><span>Security</span></div>
+        <div class="tech-item"><i class="fas fa-code-branch"></i><span>CI/CD</span></div>
+        <div class="tech-item"><i class="fab fa-kubernetes"></i><span>K8s</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section" aria-label="Newsletter subscription">
+    <div class="container">
+      <div class="newsletter-section" data-aos="fade-up">
+        <div class="newsletter-wrapper">
+          <h2><i class="fas fa-envelope-open-text"></i> Stay Updated</h2>
+          <p>Get the latest insights on technology trends, product updates, and company news delivered to your inbox.</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <input type="email" placeholder="Enter your email address" required aria-label="Email for newsletter" />
+            <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+          </form>
+          <div class="newsletter-status" id="newsStatus" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span class="brand-icon">BN</span>
+            <span>ByteNova Technologies</span>
+          </div>
+          <p class="footer-about">
+            Building Smart Software for Growing Businesses. Based in Indore, Madhya Pradesh, we deliver innovative technology solutions to startups and enterprises across India.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#software">Software Development</a></li>
+            <li><a href="services.html#web">Web Development</a></li>
+            <li><a href="services.html#mobile">Mobile Apps</a></li>
+            <li><a href="services.html#ai">AI & ML Solutions</a></li>
+            <li><a href="services.html#cloud">Cloud Services</a></li>
+            <li><a href="services.html#devops">DevOps</a></li>
+            <li><a href="services.html#analytics">Data Analytics</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Crystal IT Park, 5th Floor, Vijay Nagar, Indore, MP – 452010, India</li>
+            <li><i class="fas fa-phone-alt"></i> +91 731 400 1234</li>
+            <li><i class="fas fa-envelope"></i> hello@bytenova.in</li>
+            <li><i class="fas fa-envelope"></i> careers@bytenova.in</li>
+            <li><i class="fas fa-clock"></i> Mon – Fri, 9:30 AM – 6:30 PM IST</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ByteNova Technologies. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/917314001234" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cookie Consent -->
+  <div class="cookie-consent" id="cookieConsent" role="alert" aria-live="polite">
+    <div class="container">
+      <p>This website uses cookies to enhance your browsing experience. By continuing to use this site, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      <button class="cookie-btn" id="cookieAccept"><i class="fas fa-check"></i> Accept</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

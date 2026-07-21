@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Manage Jobs{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container">
+        <h1 class="fw-bold">Manage All Jobs</h1>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Title</th>
+                        <th>Department</th>
+                        <th>Recruiter</th>
+                        <th>Applications</th>
+                        <th>Status</th>
+                        <th>Posted</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td class="fw-semibold">{{ job.title }}</td>
+                        <td>{{ job.department }}</td>
+                        <td>{{ job.recruiter.full_name }}</td>
+                        <td>{{ job.application_count }}</td>
+                        <td>
+                            {% if job.is_active %}
+                            <span class="badge bg-success">Active</span>
+                            {% else %}
+                            <span class="badge bg-secondary">Closed</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ job.created_at.strftime('%b %d, %Y') }}</td>
+                        <td>
+                            <form method="POST" action="{{ url_for('admin.toggle_job', job_id=job.id) }}" class="d-inline">
+                                <button type="submit" class="btn btn-sm btn-outline-{% if job.is_active %}danger{% else %}success{% endif %}">
+                                    {% if job.is_active %}Deactivate{% else %}Activate{% endif %}
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

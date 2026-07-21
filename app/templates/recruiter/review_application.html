@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Review Application{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="{{ url_for('recruiter.dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ url_for('recruiter.job_applications', job_id=application.job.id) }}">{{ application.job.title }}</a></li>
+                <li class="breadcrumb-item active">Review</li>
+            </ol>
+        </nav>
+        <h1 class="fw-bold">{{ application.candidate.full_name }}</h1>
+        <p class="text-muted">Applied for {{ application.job.title }}</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Candidate Information</h5>
+                        <dl class="row mb-0">
+                            <dt class="col-sm-3 text-muted">Name</dt>
+                            <dd class="col-sm-9">{{ application.candidate.full_name }}</dd>
+                            <dt class="col-sm-3 text-muted">Email</dt>
+                            <dd class="col-sm-9">{{ application.candidate.email }}</dd>
+                            <dt class="col-sm-3 text-muted">Phone</dt>
+                            <dd class="col-sm-9">{{ application.candidate.phone or 'Not provided' }}</dd>
+                            <dt class="col-sm-3 text-muted">Applied</dt>
+                            <dd class="col-sm-9">{{ application.applied_at.strftime('%B %d, %Y at %I:%M %p') }}</dd>
+                        </dl>
+                    </div>
+                </div>
+                {% if application.cover_letter %}
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Cover Letter</h5>
+                        <p class="text-muted">{{ application.cover_letter }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Resume</h5>
+                        <p><i class="bi bi-file-earmark-pdf text-danger fs-4 me-2"></i>{{ application.resume_filename }}</p>
+                        <a href="{{ url_for('static', filename='uploads/resumes/' + application.resume_filename) }}" class="btn btn-outline-primary" target="_blank">
+                            <i class="bi bi-download me-1"></i>Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Update Status</h5>
+                        <p class="text-muted small mb-3">Changing status will trigger an email notification to the candidate.</p>
+                        <form method="POST">
+                            <div class="mb-3">
+                                <select class="form-select" name="status">
+                                    {% for status in application.STATUS_CHOICES %}
+                                    <option value="{{ status }}" {% if application.status == status %}selected{% endif %}>
+                                        {% if status == 'submitted' %}Submitted
+                                        {% elif status == 'under_review' %}Under Review
+                                        {% elif status == 'interview' %}Interview Scheduled
+                                        {% elif status == 'offered' %}Offer Extended
+                                        {% elif status == 'rejected' %}Not Selected
+                                        {% endif %}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Update Status</button>
+                        </form>
+                        <hr>
+                        <p class="small text-muted mb-0">Current: <span class="badge status-badge status-{{ application.status }}">{{ application.status_label }}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

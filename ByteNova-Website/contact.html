@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact ByteNova Technologies — send a message and get in touch." />
+  <title>Contact — ByteNova Technologies</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-card">
+      <div class="spinner-grow text-light" role="status"></div>
+      <div class="ms-2">
+        <div class="fw-bold">Loading ByteNova…</div>
+        <div class="small text-light opacity-75">Preparing your experience</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-sticky">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-mark" aria-hidden="true">BN</span>
+        <span class="brand-name">ByteNova</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5000/auth/login">Login</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-gradient btn-sm" href="contact.html"><i class="bi bi-chat-dots"></i> Get in touch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="contact-card card border-0 shadow-sm h-100">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="brand-mark brand-mark-lg">BN</div>
+                  <div>
+                    <div class="fw-bold">ByteNova Technologies</div>
+                    <div class="text-muted small">Crystal IT Park, Indore</div>
+                  </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <div class="info-line"><i class="bi bi-geo-alt-fill me-2 text-primary"></i><span>Crystal IT Park, 5th Floor, Vijay Nagar, Indore, Madhya Pradesh – 452010, India</span></div>
+                <div class="info-line mt-3"><i class="bi bi-telephone-fill me-2 text-primary"></i><span>+91 731 400 1234</span></div>
+                <div class="info-line mt-3"><i class="bi bi-envelope-fill me-2 text-primary"></i><span>careers@bytenova.in</span></div>
+                <div class="info-line mt-2"><i class="bi bi-envelope-fill me-2 text-primary"></i><span>business@bytenova.in</span></div>
+
+                <div class="mt-4">
+                  <div class="small text-muted">Working Hours</div>
+                  <div class="fw-bold">Monday – Friday</div>
+                  <div class="text-muted">9:30 AM – 6:30 PM IST</div>
+                </div>
+
+                <div class="mt-4">
+                  <a class="btn btn-outline-primary w-100" href="http://127.0.0.1:5000">
+                    <i class="bi bi-briefcase-fill me-2"></i> View Open Positions
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4 p-md-5">
+                <h1 class="fw-bold">Send a Message</h1>
+                <p class="text-muted">We’ll get back to you within 1–2 business days.</p>
+
+                <form id="contactForm" class="mt-3" onsubmit="return false;">
+                  <div class="row g-3">
+                    <div class="col-md-6"><label class="form-label">Name</label><input required type="text" class="form-control" placeholder="Your name" name="name" /></div>
+                    <div class="col-md-6"><label class="form-label">Email</label><input required type="email" class="form-control" placeholder="you@example.com" name="email" /></div>
+                    <div class="col-md-6"><label class="form-label">Phone</label><input required type="tel" class="form-control" placeholder="+91 …" name="phone" /></div>
+                    <div class="col-md-6"><label class="form-label">Message Title</label><input required type="text" class="form-control" placeholder="How can we help?" name="messageTitle" /></div>
+                    <div class="col-12"><label class="form-label">Message</label><textarea required class="form-control" rows="5" placeholder="Write your message" name="message"></textarea></div>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
+                    <button type="button" id="sendMessageBtn" class="btn btn-gradient btn-lg">
+                      <i class="bi bi-send-fill me-2"></i> Send Message
+                    </button>
+                    <div class="small text-muted" id="contactStatus" aria-live="polite"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mt-4">
+              <div class="card-body p-0">
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    title="ByteNova location map"
+                    src="https://www.google.com/maps?q=Vijay%20Nagar%2C%20Indore&output=embed"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="faq">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">FAQ</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What projects do you do?</button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Custom software, AI automation, web apps, dashboards, REST APIs and Python solutions for Indian startups and SMEs.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Do you support after deployment?</button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Yes—maintenance and support are part of our delivery process.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">How do we start?</button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Use the contact form. We’ll discuss scope, timeline and next steps.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-mark" aria-hidden="true">BN</span>
+            <div>
+              <div class="fw-bold">ByteNova Technologies</div>
+              <div class="text-muted small">Building Smart Software</div>
+            </div>
+          </div>
+          <div class="text-muted">&copy; 2025 ByteNova Technologies. All Rights Reserved.</div>
+        </div>
+        <div class="col-md-2">
+          <div class="fw-bold mb-2">Links</div>
+          <ul class="footer-links list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+            <li><a href="index.html#careers" class="footer-link">Careers</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="fw-bold mb-2">Legal</div>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="fw-bold mb-2">Social</div>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="social-pill" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a class="social-pill" href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-top border-white-10 d-flex flex-wrap justify-content-between align-items-center">
+        <div class="text-muted small">Smooth, modern, and fully responsive — built for a professional startup look.</div>
+        <button class="btn btn-link text-decoration-none back-to-top" id="backToTop" type="button">
+          <i class="bi bi-arrow-up-circle-fill"></i> Back to top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <button class="floating-contact" id="floatingContact" type="button" aria-label="Contact">
+    <i class="bi bi-chat-left-text-fill"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
+

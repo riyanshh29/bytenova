@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ByteNova Technologies services — Custom software development, web development, mobile apps, UI/UX design, AI/ML, cloud computing, DevOps, data analytics, and API integration." />
+  <title>Services — ByteNova Technologies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-content"><div class="loading-logo">ByteNova</div><div class="loading-spinner"></div><div class="loading-text">Loading</div></div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar" id="siteNavbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand"><span class="brand-icon">BN</span> ByteNova</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 data-aos="fade-up">Our Services</h1>
+      <p data-aos="fade-up" data-aos-delay="80">End-to-end technology solutions designed to accelerate your business growth.</p>
+    </div>
+  </header>
+
+  <!-- Service: Software Development -->
+  <section class="section" id="software">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-image" data-aos="fade-right"><i class="fas fa-code"></i></div>
+        <div data-aos="fade-left">
+          <span class="section-label"><i class="fas fa-code"></i> Service</span>
+          <h2 class="section-title">Custom Software Development</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">We design and build tailored software solutions that automate your workflows, streamline operations, and solve your unique business challenges. From enterprise applications to specialized tools, our team delivers robust, scalable, and maintainable software.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Automation of manual processes</li>
+            <li><i class="fas fa-check-circle"></i> Scalable architecture for growth</li>
+            <li><i class="fas fa-check-circle"></i> Integration with existing systems</li>
+            <li><i class="fas fa-check-circle"></i> Dedicated support & maintenance</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Technologies</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">Python, Java, .NET, Node.js, React, Angular, PostgreSQL, MongoDB, Docker, AWS</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Discuss Your Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Web Development -->
+  <section class="section section-bg" id="web">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div data-aos="fade-right">
+          <span class="section-label"><i class="fas fa-globe"></i> Service</span>
+          <h2 class="section-title">Web Development</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">We build responsive, high-performance websites and web applications that engage users and drive conversions. Using modern frameworks and best practices, we deliver SEO-optimized, accessible, and fast-loading web solutions.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Mobile-first responsive design</li>
+            <li><i class="fas fa-check-circle"></i> SEO-optimized architecture</li>
+            <li><i class="fas fa-check-circle"></i> Fast loading & performance</li>
+            <li><i class="fas fa-check-circle"></i> CMS integration ready</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Technologies</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">React, Angular, Vue.js, Node.js, Flask, Django, HTML5, CSS3, Bootstrap, Tailwind</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+        </div>
+        <div class="service-detail-image" data-aos="fade-left"><i class="fas fa-globe"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Mobile Apps -->
+  <section class="section" id="mobile">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-image" data-aos="fade-right"><i class="fas fa-mobile-alt"></i></div>
+        <div data-aos="fade-left">
+          <span class="section-label"><i class="fas fa-mobile-alt"></i> Service</span>
+          <h2 class="section-title">Mobile App Development</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android. From consumer apps to enterprise mobility solutions, we build apps that are fast, intuitive, and reliable.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Native performance & feel</li>
+            <li><i class="fas fa-check-circle"></i> Offline capabilities</li>
+            <li><i class="fas fa-check-circle"></i> Push notifications</li>
+            <li><i class="fas fa-check-circle"></i> App store deployment</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Technologies</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">Flutter, React Native, Swift, Kotlin, Firebase, REST APIs</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Build Your App</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: UI/UX Design -->
+  <section class="section section-bg" id="design">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div data-aos="fade-right">
+          <span class="section-label"><i class="fas fa-paint-brush"></i> Service</span>
+          <h2 class="section-title">UI/UX Design</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">User-centered design that combines aesthetics with usability. Our designers conduct research, create wireframes, and deliver pixel-perfect interfaces that users love.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Improved user engagement</li>
+            <li><i class="fas fa-check-circle"></i> Higher conversion rates</li>
+            <li><i class="fas fa-check-circle"></i> Accessibility compliance</li>
+            <li><i class="fas fa-check-circle"></i> Design system creation</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Tools</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">Figma, Adobe XD, Sketch, InVision, Miro, UserTesting</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Design Your Product</a>
+        </div>
+        <div class="service-detail-image" data-aos="fade-left"><i class="fas fa-paint-brush"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: AI/ML -->
+  <section class="section" id="ai">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-image" data-aos="fade-right"><i class="fas fa-brain"></i></div>
+        <div data-aos="fade-left">
+          <span class="section-label"><i class="fas fa-brain"></i> Service</span>
+          <h2 class="section-title">AI & Machine Learning</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">Intelligent automation, predictive analytics, natural language processing, and computer vision solutions that give your business a data-driven competitive advantage.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Process automation</li>
+            <li><i class="fas fa-check-circle"></i> Data-driven decisions</li>
+            <li><i class="fas fa-check-circle"></i> Predictive insights</li>
+            <li><i class="fas fa-check-circle"></i> Scalable ML pipelines</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Technologies</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">TensorFlow, PyTorch, Scikit-learn, NLP, Computer Vision, OpenAI APIs, LangChain</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Explore AI Solutions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Cloud -->
+  <section class="section section-bg" id="cloud">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div data-aos="fade-right">
+          <span class="section-label"><i class="fas fa-cloud"></i> Service</span>
+          <h2 class="section-title">Cloud Solutions</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">Scalable cloud infrastructure design, migration, and management on AWS, Azure, and Google Cloud. We help you leverage the cloud for cost savings, flexibility, and reliability.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> 35% cost optimization</li>
+            <li><i class="fas fa-check-circle"></i> Auto-scaling infrastructure</li>
+            <li><i class="fas fa-check-circle"></i> Disaster recovery</li>
+            <li><i class="fas fa-check-circle"></i> 99.9% uptime guarantee</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Platforms</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">AWS, Azure, Google Cloud, DigitalOcean, Terraform, Kubernetes</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Migrate to Cloud</a>
+        </div>
+        <div class="service-detail-image" data-aos="fade-left"><i class="fas fa-cloud"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: DevOps -->
+  <section class="section" id="devops">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-image" data-aos="fade-right"><i class="fas fa-arrows-alt"></i></div>
+        <div data-aos="fade-left">
+          <span class="section-label"><i class="fas fa-arrows-alt"></i> Service</span>
+          <h2 class="section-title">DevOps</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">Accelerate your development lifecycle with CI/CD pipelines, infrastructure automation, and containerization. Our DevOps practices ensure faster releases and reliable deployments.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Faster time-to-market</li>
+            <li><i class="fas fa-check-circle"></i> Automated deployments</li>
+            <li><i class="fas fa-check-circle"></i> Infrastructure as code</li>
+            <li><i class="fas fa-check-circle"></i> Monitoring & logging</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Tools</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">Docker, Kubernetes, Jenkins, GitLab CI, Ansible, Terraform, Prometheus</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Optimize Your DevOps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: Data Analytics -->
+  <section class="section section-bg" id="analytics">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div data-aos="fade-right">
+          <span class="section-label"><i class="fas fa-chart-bar"></i> Service</span>
+          <h2 class="section-title">Data Analytics</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">Transform raw data into actionable insights. We build custom dashboards, reporting tools, and business intelligence solutions that help you make informed decisions.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Real-time dashboards</li>
+            <li><i class="fas fa-check-circle"></i> Predictive analytics</li>
+            <li><i class="fas fa-check-circle"></i> Data visualization</li>
+            <li><i class="fas fa-check-circle"></i> Automated reporting</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Technologies</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">Power BI, Tableau, Python, SQL, Apache Spark, ETL Pipelines</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Unlock Your Data</a>
+        </div>
+        <div class="service-detail-image" data-aos="fade-left"><i class="fas fa-chart-bar"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service: API Integration -->
+  <section class="section" id="api">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-image" data-aos="fade-right"><i class="fas fa-plug"></i></div>
+        <div data-aos="fade-left">
+          <span class="section-label"><i class="fas fa-plug"></i> Service</span>
+          <h2 class="section-title">API Integration</h2>
+          <p style="color: var(--bn-gray); line-height: 1.8; margin-bottom: 20px;">Seamlessly connect your systems with third-party APIs, payment gateways, and enterprise platforms. We build robust integration layers that ensure data flows smoothly across your ecosystem.</p>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Benefits</h4>
+          <ul class="benefits-list" style="margin-bottom: 20px;">
+            <li><i class="fas fa-check-circle"></i> Seamless system connectivity</li>
+            <li><i class="fas fa-check-circle"></i> Payment gateway integration</li>
+            <li><i class="fas fa-check-circle"></i> CRM & ERP integration</li>
+            <li><i class="fas fa-check-circle"></i> Secure data exchange</li>
+          </ul>
+          <h4 style="font-weight: 700; margin-bottom: 12px;">Technologies</h4>
+          <p style="color: var(--bn-gray); margin-bottom: 20px;">REST, GraphQL, Webhooks, Stripe, Razorpay, Salesforce APIs</p>
+          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Integrate Your Systems</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--bn-gradient-1); padding: 80px 0;">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 style="color: white; font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Not Sure Which Service You Need?</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 30px;">Schedule a free consultation with our team. We'll listen to your requirements and recommend the best approach.</p>
+      <a href="contact.html" class="btn btn-light btn-lg"><i class="fas fa-calendar-alt"></i> Book a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><span class="brand-icon">BN</span><span>ByteNova Technologies</span></div>
+          <p class="footer-about">Building Smart Software for Growing Businesses.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#software">Software Development</a></li>
+            <li><a href="#web">Web Development</a></li>
+            <li><a href="#mobile">Mobile Apps</a></li>
+            <li><a href="#ai">AI & ML</a></li>
+            <li><a href="#cloud">Cloud Solutions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Crystal IT Park, Indore, MP – 452010</li>
+            <li><i class="fas fa-phone-alt"></i> +91 731 400 1234</li>
+            <li><i class="fas fa-envelope"></i> hello@bytenova.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ByteNova Technologies. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+  <a href="https://wa.me/917314001234" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

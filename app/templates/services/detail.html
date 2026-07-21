@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}{{ service.title }} — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5 hero-sub">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+          <i class="bi {{ service.icon }} me-1"></i> {{ service.title }}
+        </div>
+        <h1 class="display-6 fw-bold text-white mt-3">{{ service.title }}</h1>
+<p class="lead text-white opacity-90 mt-3 mb-0">{{ service.short }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8" data-aos="fade-up">
+        <h2 class="section-title mb-4">Overview</h2>
+        <p class="text-muted lead">{{ service.overview }}</p>
+
+        <h2 class="section-title mt-5 mb-4">Benefits</h2>
+        <div class="row g-3">
+          {% for benefit in service.benefits %}
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="feature-card p-3">
+              <div class="d-flex gap-3">
+                <i class="bi bi-check-circle-fill text-success flex-shrink-0" style="font-size: 1.3rem;"></i>
+                <div>
+                  <p class="mb-0 text-muted">{{ benefit }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-left">
+        <div class="card border-0 shadow-sm sticky-top" style="top: 90px;">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-3">Technologies</h4>
+            <div class="d-flex flex-wrap gap-2">
+              {% for tech in service.technologies %}
+              <span class="tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            <hr>
+<h5 class="fw-bold mb-3">{{ service.cta }}</h5>
+            <a href="{{ url_for('main.contact') }}" class="btn btn-gradient w-100 btn-lg">
+              <i class="bi bi-chat-dots me-2"></i>Get in Touch
+            </a>
+            <a href="{{ url_for('main.portfolio') }}" class="btn btn-outline-primary w-100 mt-2">
+              <i class="bi bi-briefcase me-2"></i>View Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="section-title mb-4">Ready to get started?</h2>
+    <p class="lead text-muted mb-4">Let's discuss your {{ service.title.lower() }} requirements.</p>
+    <a href="{{ url_for('main.contact') }}" class="btn btn-gradient btn-lg px-5">
+      <i class="bi bi-send-fill me-2"></i>Contact Us Today
+    </a>
+  </div>
+</section>
+{% endblock %}
+

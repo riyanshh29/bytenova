@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}FAQ — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5 hero-sub">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+          <i class="bi bi-question-circle me-1"></i> FAQ
+        </div>
+        <h1 class="display-6 fw-bold text-white mt-3">Frequently Asked Questions</h1>
+        <p class="lead text-white opacity-90 mt-3 mb-0">
+          Everything you need to know about ByteNova Technologies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-8 mx-auto">
+        <div class="accordion" id="faqAccordion">
+
+          <h4 class="fw-bold mb-3">Company</h4>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                What is ByteNova Technologies?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">ByteNova Technologies is a software development company based in Indore, India. We specialize in Python development, AI automation, web applications, REST APIs, and business dashboards for startups and SMEs.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                When was ByteNova founded?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">ByteNova Technologies was founded in 2025 and is headquartered at Crystal IT Park, 5th Floor, Vijay Nagar, Indore, Madhya Pradesh.</div>
+            </div>
+          </div>
+
+          <h4 class="fw-bold mt-5 mb-3">Services</h4>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                What types of projects do you work on?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">We build custom software, AI automation workflows, web applications, dashboards, REST APIs, and Python solutions for startups and SMEs across various industries including healthcare, retail, education, and finance.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Do you work with startups?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Yes! Startups and SMEs are our primary focus. We offer affordable, scalable solutions designed specifically for growing businesses.</div>
+            </div>
+          </div>
+
+          <h4 class="fw-bold mt-5 mb-3">Process & Pricing</h4>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                How do we start a project with ByteNova?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Send us a message via our <a href="{{ url_for('main.contact') }}">contact form</a>. We'll discuss requirements, scope, timeline, and plan the build together.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                How long does a typical project take?
+              </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Project timelines vary based on scope. A typical dashboard or API project takes 2-4 months. A full-scale application may take 4-6 months. We work in clear milestones so you can track progress.</div>
+            </div>
+          </div>
+
+          <h4 class="fw-bold mt-5 mb-3">Careers</h4>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                Does ByteNova offer internships?
+              </button>
+            </h2>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Yes! We regularly hire interns for Python development, AI automation, and web development roles. Check our <a href="{{ url_for('main.careers') }}">Careers</a> page for open positions.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                What is the hiring process at ByteNova?
+              </button>
+            </h2>
+            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Our hiring process includes: 1) Online application, 2) Recruiter screen, 3) Technical interview, 4) Team meet, and 5) Offer. We aim to complete the process within 2-3 weeks.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="section-title mb-4">Still have questions?</h2>
+    <p class="lead text-muted mb-4">We're happy to answer any questions you may have.</p>
+    <a href="{{ url_for('main.contact') }}" class="btn btn-gradient btn-lg px-5">
+      <i class="bi bi-chat-dots me-2"></i> Contact Us
+    </a>
+  </div>
+</section>
+{% endblock %}
+

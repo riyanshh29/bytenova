@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}Recruiter Dashboard{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="fw-bold mb-1">Recruiter Dashboard</h1>
+            <p class="text-muted mb-0">Manage roles for ByteNova's growing Python, AI automation, and web development team</p>
+        </div>
+        <a href="{{ url_for('recruiter.create_job') }}" class="btn btn-primary">
+            <i class="bi bi-plus-lg me-1"></i>Post New Job
+        </a>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <!-- Stats -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm stat-card">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold text-primary">{{ stats.total_jobs }}</h3>
+                        <small class="text-muted">Total Jobs Posted</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm stat-card">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold text-success">{{ stats.active_jobs }}</h3>
+                        <small class="text-muted">Active Listings</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm stat-card">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold text-info">{{ stats.total_applications }}</h3>
+                        <small class="text-muted">Total Applications</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm stat-card">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold text-warning">{{ stats.pending_review }}</h3>
+                        <small class="text-muted">Pending Review</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Jobs -->
+        <h4 class="fw-bold mb-4">My Job Listings</h4>
+        <div class="table-responsive mb-5">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Title</th>
+                        <th>Department</th>
+                        <th>Applications</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td class="fw-semibold">{{ job.title }}</td>
+                        <td>{{ job.department }}</td>
+                        <td>
+                            <a href="{{ url_for('recruiter.job_applications', job_id=job.id) }}">
+                                {{ job.application_count }} applicant{{ 's' if job.application_count != 1 else '' }}
+                            </a>
+                        </td>
+                        <td>
+                            {% if job.is_active %}
+                            <span class="badge bg-success">Active</span>
+                            {% else %}
+                            <span class="badge bg-secondary">Closed</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('recruiter.edit_job', job_id=job.id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
+                            <a href="{{ url_for('recruiter.job_applications', job_id=job.id) }}" class="btn btn-sm btn-outline-secondary">Applicants</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="5" class="text-center text-muted py-4">No jobs posted yet.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recent Applications -->
+        <h4 class="fw-bold mb-4">Recent Applications</h4>
+        {% if recent_apps %}
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Position</th>
+                        <th>Applied</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in recent_apps %}
+                    <tr>
+                        <td>{{ app.candidate.full_name }}</td>
+                        <td>{{ app.job.title }}</td>
+                        <td>{{ app.applied_at.strftime('%b %d, %Y') }}</td>
+                        <td><span class="badge status-badge status-{{ app.status }}">{{ app.status_label }}</span></td>
+                        <td><a href="{{ url_for('recruiter.review_application', app_id=app.id) }}" class="btn btn-sm btn-primary">Review</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-muted">No applications received yet.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

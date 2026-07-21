@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}{{ job.title }}{% endblock %}
+
+{% block content %}
+<section class="page-header py-5 bg-light">
+    <div class="container">
+        <div class="d-flex gap-2 mb-3">
+            <span class="badge bg-primary-subtle text-primary">{{ job.department }}</span>
+            <span class="badge bg-light text-dark border">{{ job.job_type }}</span>
+        </div>
+        <h1 class="fw-bold">{{ job.title }}</h1>
+        <p class="lead text-muted mb-0">
+            <i class="bi bi-geo-alt me-1"></i>{{ job.location }}
+            {% if job.salary_range %}&nbsp;·&nbsp;{{ job.salary_range }}{% endif %}
+        </p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <h3 class="fw-bold mb-3">About the Role</h3>
+                <p class="text-muted">{{ job.description }}</p>
+
+                <h3 class="fw-bold mb-3 mt-5">Requirements</h3>
+                <div class="text-muted requirements-list">{{ job.requirements }}</div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm sticky-top apply-card">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-4">Apply for this role</h5>
+                        <ul class="list-unstyled text-muted small mb-4">
+                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>PDF resume required</li>
+                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Track status in your portal</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i>Response within 5 business days</li>
+                        </ul>
+                        {% if already_applied %}
+                            <button class="btn btn-secondary w-100" disabled>Already Applied</button>
+                            <a href="{{ url_for('candidate.applications') }}" class="btn btn-outline-primary w-100 mt-2">View Application</a>
+                        {% elif current_user.is_authenticated and current_user.is_candidate %}
+                            <a href="{{ url_for('jobs.apply', job_id=job.id) }}" class="btn btn-primary btn-lg w-100">Apply Now</a>
+                        {% elif current_user.is_authenticated %}
+                            <p class="text-muted small">Recruiter and admin accounts cannot apply for jobs.</p>
+                        {% else %}
+                            <a href="{{ url_for('auth.login', next=url_for('jobs.apply', job_id=job.id)) }}" class="btn btn-primary btn-lg w-100">Sign In to Apply</a>
+                            <a href="{{ url_for('auth.register') }}" class="btn btn-outline-primary w-100 mt-2">Create Account</a>
+                        {% endif %}
+                        <hr>
+                        <small class="text-muted">Posted {{ job.created_at.strftime('%B %d, %Y') }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

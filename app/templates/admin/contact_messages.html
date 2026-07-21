@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Contact Messages — Admin{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-dark text-white">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      <h1 class="fw-bold mb-1"><i class="bi bi-envelope me-2"></i>Contact Messages</h1>
+      <p class="opacity-75 mb-0">View and manage website enquiries</p>
+    </div>
+    <a href="{{ url_for('admin.contact_messages') }}{% if show_read %}?show_read=0{% else %}?show_read=1{% endif %}" class="btn btn-outline-light">
+      {% if show_read %}
+        <i class="bi bi-envelope me-1"></i>Show Unread Only
+      {% else %}
+        <i class="bi bi-inbox me-1"></i>Show All Messages
+      {% endif %}
+    </a>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    {% if messages %}
+    <div class="table-responsive">
+      <table class="table table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Status</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for msg in messages %}
+          <tr class="{% if not msg.is_read %}fw-semibold{% endif %}">
+            <td>
+              {% if msg.is_read %}
+              <span class="badge bg-secondary">Read</span>
+              {% else %}
+              <span class="badge bg-primary">New</span>
+              {% endif %}
+            </td>
+            <td>{{ msg.name }}</td>
+            <td><a href="mailto:{{ msg.email }}" class="text-decoration-none">{{ msg.email }}</a></td>
+            <td>{{ msg.subject }}</td>
+            <td>{{ msg.created_at.strftime('%b %d, %Y') }}</td>
+            <td>
+              <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#msgModal{{ msg.id }}">
+                <i class="bi bi-eye"></i> View
+              </button>
+              <form method="POST" action="{{ url_for('admin.toggle_message_read', msg_id=msg.id) }}" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-outline-secondary">
+                  {% if msg.is_read %}<i class="bi bi-envelope"></i>{% else %}<i class="bi bi-envelope-open"></i>{% endif %}
+                </button>
+              </form>
+            </td>
+          </tr>
+
+          <!-- Modal -->
+          <div class="modal fade" id="msgModal{{ msg.id }}" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">{{ msg.subject }}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row mb-3">
+                    <div class="col-md-4"><strong>Name:</strong> {{ msg.name }}</div>
+                    <div class="col-md-4"><strong>Email:</strong> {{ msg.email }}</div>
+                    <div class="col-md-4"><strong>Phone:</strong> {{ msg.phone }}</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-12"><strong>Date:</strong> {{ msg.created_at.strftime('%B %d, %Y at %I:%M %p') }}</div>
+                  </div>
+                  <hr>
+                  <p class="text-muted">{{ msg.message }}</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="mailto:{{ msg.email }}?subject=Re: {{ msg.subject }}" class="btn btn-primary">
+                    <i class="bi bi-reply me-1"></i>Reply via Email
+                  </a>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+      <i class="bi bi-inbox display-1 text-muted"></i>
+      <p class="text-muted mt-3">No contact messages yet.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+

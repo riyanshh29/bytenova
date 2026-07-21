@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About ByteNova Technologies — Learn about our mission, vision, core values, company timeline, and the team behind India's emerging software development company." />
+  <title>About Us — ByteNova Technologies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-content">
+      <div class="loading-logo">ByteNova</div>
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading</div>
+    </div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar" id="siteNavbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <span class="brand-icon">BN</span> ByteNova
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 data-aos="fade-up">About ByteNova Technologies</h1>
+      <p data-aos="fade-up" data-aos-delay="80">Discover our journey, mission, and the team behind India's emerging software development company.</p>
+    </div>
+  </header>
+
+  <!-- Company Story -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image" data-aos="fade-right">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="about-text" data-aos="fade-left">
+          <span class="section-label"><i class="fas fa-book-open"></i> Our Story</span>
+          <h2>From a Vision to a Growing Technology Company</h2>
+          <p>ByteNova Technologies was founded in 2023 by a group of passionate engineers and technology enthusiasts who believed that India's startup ecosystem deserved access to world-class software development at affordable prices.</p>
+          <p>What started as a small team of 4 developers working from a co-working space in Indore has grown into a 12-person technology company serving clients across 8 cities in India. Our journey has been defined by a relentless focus on quality, client satisfaction, and continuous learning.</p>
+          <p>Today, ByteNova delivers custom software, web applications, mobile apps, AI solutions, and cloud infrastructure to startups, SMEs, and enterprises — helping them leverage technology for tangible business growth.</p>
+          <a href="services.html" class="btn btn-primary mt-3"><i class="fas fa-cogs"></i> Explore Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <div class="card" style="padding: 40px; background: white; border-radius: var(--bn-radius); box-shadow: var(--bn-shadow); border: 1px solid rgba(37,99,235,0.06);" data-aos="fade-up">
+          <div style="font-size: 2.5rem; color: var(--bn-primary); margin-bottom: 20px;"><i class="fas fa-bullseye"></i></div>
+          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 12px;">Our Mission</h3>
+          <p style="color: var(--bn-gray); line-height: 1.8;">Deliver innovative, reliable, and scalable digital solutions that empower businesses through technology. We are committed to understanding each client's unique challenges and crafting solutions that drive measurable outcomes.</p>
+        </div>
+        <div class="card" style="padding: 40px; background: white; border-radius: var(--bn-radius); box-shadow: var(--bn-shadow); border: 1px solid rgba(37,99,235,0.06);" data-aos="fade-up" data-aos-delay="100">
+          <div style="font-size: 2.5rem; color: var(--bn-primary); margin-bottom: 20px;"><i class="fas fa-eye"></i></div>
+          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 12px;">Our Vision</h3>
+          <p style="color: var(--bn-gray); line-height: 1.8;">Become one of India's most trusted software development companies by providing high-quality technology solutions and exceptional customer experiences that help businesses thrive in the digital age.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-heart"></i> Our Values</span>
+        <h2 class="section-title">Core Values That Define Us</h2>
+        <p class="section-desc">These principles guide every decision we make and every solution we build.</p>
+      </div>
+      <div class="values-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="value-card"><div class="value-icon"><i class="fas fa-lightbulb"></i></div><h4>Innovation</h4><p>We embrace creative thinking and emerging technologies to build forward-looking solutions.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-shield-alt"></i></div><h4>Integrity</h4><p>Honesty, transparency, and ethical practices form the foundation of every client relationship.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-trophy"></i></div><h4>Customer Success</h4><p>Your success is our success. We measure our performance by the impact we create for you.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-users"></i></div><h4>Collaboration</h4><p>We work as an extension of your team, fostering open communication and shared ownership.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-medal"></i></div><h4>Excellence</h4><p>We pursue the highest standards in code quality, user experience, and project management.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-book"></i></div><h4>Continuous Learning</h4><p>Technology evolves rapidly. We invest in learning to ensure our solutions stay ahead of the curve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Timeline -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-clock"></i> Our Journey</span>
+        <h2 class="section-title">Company Milestones</h2>
+        <p class="section-desc">Key moments that have shaped ByteNova Technologies into what it is today.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <div class="timeline-year">2023 — Q1</div>
+            <h4>Foundation</h4>
+            <p>ByteNova Technologies was founded in Indore by a team of 4 engineers with a vision to make quality software development accessible to Indian businesses.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-content">
+            <div class="timeline-year">2023 — Q3</div>
+            <h4>First Major Client</h4>
+            <p>Onboarded our first enterprise client, delivering a comprehensive hospital management system used by a 100-bed multi-speciality hospital.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <div class="timeline-year">2024 — Q1</div>
+            <h4>Team Expansion</h4>
+            <p>Grew to 8 team members, adding expertise in AI/ML, mobile development, and cloud infrastructure to our service portfolio.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-content">
+            <div class="timeline-year">2024 — Q3</div>
+            <h4>45+ Projects Delivered</h4>
+            <p>Reached the milestone of 45 completed projects across healthcare, retail, education, finance, and logistics sectors.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <div class="timeline-year">2025 — Q1</div>
+            <h4>Office Expansion</h4>
+            <p>Moved to our dedicated office space at Crystal IT Park, Vijay Nagar, Indore, and expanded to a team of 12 professionals.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-content">
+            <div class="timeline-year">2025 — Present</div>
+            <h4>Serving 8 Cities</h4>
+            <p>Currently serving clients across Indore, Bengaluru, Mumbai, Pune, Delhi, Hyderabad, Chennai, and Ahmedabad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-award"></i> Achievements</span>
+        <h2 class="section-title">Milestones & Recognition</h2>
+        <p class="section-desc">Our commitment to excellence has earned us recognition from clients and industry bodies alike.</p>
+      </div>
+      <div class="stats-grid" data-aos="fade-up" data-aos-delay="80">
+        <div class="stat-card"><div class="stat-number" data-count="85">0</div><div class="stat-label">Projects Delivered</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="45">0</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="98">0</div><div class="stat-label">Client Retention %</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="8">0</div><div class="stat-label">Cities Served</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="5">0</div><div class="stat-label">Industry Awards</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--bn-gradient-1); padding: 80px 0;">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 style="color: white; font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Let's Build Something Great Together</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 30px;">Have a project in mind? We'd love to hear about it. Let's discuss how ByteNova can help turn your ideas into reality.</p>
+      <a href="contact.html" class="btn btn-light btn-lg"><i class="fas fa-paper-plane"></i> Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><span class="brand-icon">BN</span><span>ByteNova Technologies</span></div>
+          <p class="footer-about">Building Smart Software for Growing Businesses. Based in Indore, MP.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#software">Software Development</a></li>
+            <li><a href="services.html#web">Web Development</a></li>
+            <li><a href="services.html#mobile">Mobile Apps</a></li>
+            <li><a href="services.html#ai">AI & ML Solutions</a></li>
+            <li><a href="services.html#cloud">Cloud Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Crystal IT Park, 5th Floor, Vijay Nagar, Indore, MP – 452010</li>
+            <li><i class="fas fa-phone-alt"></i> +91 731 400 1234</li>
+            <li><i class="fas fa-envelope"></i> hello@bytenova.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ByteNova Technologies. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+  <a href="https://wa.me/917314001234" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

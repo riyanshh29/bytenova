@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Portfolio — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5 hero-sub" id="portfolio-hero">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7" data-aos="fade-up">
+        <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+          <i class="bi bi-briefcase-fill me-1"></i> Portfolio
+        </div>
+        <h1 class="display-6 fw-bold text-white mt-3">Our completed projects</h1>
+        <p class="lead text-white opacity-90 mt-3 mb-0">
+          Here are sample completed projects with technology used—built for operational efficiency and reliable delivery.
+        </p>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="card border-0 shadow-lg portfolio-hero-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <div class="small text-muted">Outcome focus</div>
+                <div class="fw-bold">Speed + maintainability</div>
+              </div>
+              <i class="bi bi-lightning-charge-fill text-primary" style="font-size:2rem"></i>
+            </div>
+            <hr />
+            <div class="text-muted">
+              We keep the stack modern and the architecture clean—so teams can adopt solutions quickly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" id="portfolio-grid">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+      <div>
+        <h2 class="section-title mb-1">Completed Projects</h2>
+        <p class="text-muted mb-0">Sample projects that reflect typical ByteNova engagements.</p>
+      </div>
+      <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary"><i class="bi bi-envelope-fill me-2"></i> Build something</a>
+    </div>
+
+    <div class="row g-4">
+      {% for slug, project in projects.items() %}
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <a href="{{ url_for('main.portfolio_detail', slug=slug) }}" class="text-decoration-none">
+          <div class="project-card">
+            <div class="project-img"><i class="bi {{ project.icon }}"></i></div>
+            <div class="p-4">
+              <h5>{{ project.title }}</h5>
+              <p class="text-muted">{{ project.description[:120] }}...</p>
+              <div class="tech-tags">
+                {% for tech in project.technologies[:3] %}
+                <span class="tag">{{ tech }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+

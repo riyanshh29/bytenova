@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}Testimonials — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5 hero-sub">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+          <i class="bi bi-star-fill me-1"></i> Testimonials
+        </div>
+        <h1 class="display-6 fw-bold text-white mt-3">What Our Clients Say</h1>
+        <p class="lead text-white opacity-90 mt-3 mb-0">
+          Don't take our word for it — hear from the businesses we've helped.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"ByteNova delivered exactly what we needed—automation and dashboards that our team uses daily. Their Python expertise is outstanding and they were a pleasure to work with."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">AR</div>
+            <div>
+              <div class="fw-bold">Ananya Rao</div>
+              <div class="text-muted small">Indore Foods</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"Their Python expertise and clean APIs made integrations smooth. Great communication and speed. We've already started our second project with them."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">TS</div>
+            <div>
+              <div class="fw-bold">Tushar Sharma</div>
+              <div class="text-muted small">TechEdge Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"Modern UI, reliable deployment, and support that actually responds. Highly recommended for any business looking for professional software development."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">SR</div>
+            <div>
+              <div class="fw-bold">Saanvi Raghav</div>
+              <div class="text-muted small">Smart Retail India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"The team at ByteNova understood our requirements quickly and built a custom dashboard that transformed how we track our business metrics."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">MK</div>
+            <div>
+              <div class="fw-bold">Manish Kapoor</div>
+              <div class="text-muted small">Kapoor Enterprises</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"We needed a reliable REST API for our platform and ByteNova delivered beyond expectations. Clean code, thorough documentation, and on-time delivery."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">NP</div>
+            <div>
+              <div class="fw-bold">Neha Patel</div>
+              <div class="text-muted small">HealthFirst Clinics</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"As a startup, we needed affordable yet professional software. ByteNova delivered exactly that. Their client-first approach made all the difference."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">RJ</div>
+            <div>
+              <div class="fw-bold">Rohit Jain</div>
+              <div class="text-muted small">FreshCart India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="section-title mb-4">Want to become our next success story?</h2>
+    <p class="lead text-muted mb-4">Let's discuss your project and see how we can help.</p>
+    <a href="{{ url_for('main.contact') }}" class="btn btn-gradient btn-lg px-5">
+      <i class="bi bi-chat-dots me-2"></i> Get in Touch
+    </a>
+  </div>
+</section>
+{% endblock %}
+

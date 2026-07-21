@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+{% block title %}Contact — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5 hero-sub">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+          <i class="bi bi-chat-dots me-1"></i> Get in Touch
+        </div>
+        <h1 class="display-6 fw-bold text-white mt-3">Contact ByteNova Technologies</h1>
+        <p class="lead text-white opacity-90 mt-3 mb-0">
+          Have a project in mind? Reach out and we'll get back to you within 1–2 business days.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="contact-card card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center gap-3">
+              <div class="brand-mark brand-mark-lg">BN</div>
+              <div>
+                <div class="fw-bold">ByteNova Technologies</div>
+                <div class="text-muted small">Crystal IT Park, Indore</div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="info-line"><i class="bi bi-geo-alt-fill me-2 text-primary"></i><span>Crystal IT Park, 5th Floor, Vijay Nagar, Indore, Madhya Pradesh – 452010, India</span></div>
+            <div class="info-line mt-3"><i class="bi bi-telephone-fill me-2 text-primary"></i><span>+91 731 400 1234</span></div>
+            <div class="info-line mt-3"><i class="bi bi-envelope-fill me-2 text-primary"></i><span>careers@bytenova.in</span></div>
+            <div class="info-line mt-2"><i class="bi bi-envelope-fill me-2 text-primary"></i><span>business@bytenova.in</span></div>
+
+            <div class="mt-4">
+              <div class="small text-muted">Working Hours</div>
+              <div class="fw-bold">Monday – Friday</div>
+              <div class="text-muted">9:30 AM – 6:30 PM IST</div>
+            </div>
+
+            <div class="mt-4">
+              <a class="btn btn-outline-primary w-100" href="{{ url_for('main.careers') }}">
+                <i class="bi bi-briefcase-fill me-2"></i> View Open Positions
+              </a>
+            </div>
+
+            <div class="mt-3 d-flex flex-wrap gap-2">
+              <a class="social-pill" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a class="social-pill" href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a class="social-pill" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="fw-bold">Send a Message</h2>
+            <p class="text-muted">We'll get back to you within 1–2 business days.</p>
+
+            <form id="contactForm" class="mt-3">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Name <span class="text-danger">*</span></label>
+                  <input required type="text" class="form-control" placeholder="Your name" name="name" id="contactName" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email <span class="text-danger">*</span></label>
+                  <input required type="email" class="form-control" placeholder="you@example.com" name="email" id="contactEmail" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone <span class="text-danger">*</span></label>
+                  <input required type="tel" class="form-control" placeholder="+91 …" name="phone" id="contactPhone" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Subject <span class="text-danger">*</span></label>
+                  <input required type="text" class="form-control" placeholder="How can we help?" name="subject" id="contactSubject" />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Message <span class="text-danger">*</span></label>
+                  <textarea required class="form-control" rows="5" placeholder="Write your message" name="message" id="contactMessage"></textarea>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
+                <button type="submit" id="sendMessageBtn" class="btn btn-gradient btn-lg">
+                  <i class="bi bi-send-fill me-2"></i> Send Message
+                </button>
+                <div class="small" id="contactStatus" aria-live="polite"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Google Map -->
+        <div class="card border-0 shadow-sm mt-4">
+          <div class="card-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                title="ByteNova location map"
+                src="https://www.google.com/maps?q=Vijay%20Nagar%2C%20Indore&output=embed"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            What types of projects do you work on?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            We build custom software, AI automation workflows, web applications, dashboards, REST APIs and Python solutions for startups and SMEs.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            Do you offer ongoing support after delivery?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            Yes. We provide post-deployment support and maintenance so your team can rely on stable updates and quick fixes.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            How do we start a project with ByteNova?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            Send us a message via the contact form. We'll discuss requirements, scope, timeline, and plan the build.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            What technologies does ByteNova use?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            We primarily use Python, Flask, JavaScript, Bootstrap, SQLite/PostgreSQL, and modern AI/ML tools for automation.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Does ByteNova offer internships?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            Yes! We regularly hire interns for Python development, AI automation, and web development roles. Check our <a href="{{ url_for('main.careers') }}">Careers</a> page for open positions.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contactForm');
+  const sendBtn = document.getElementById('sendMessageBtn');
+  const status = document.getElementById('contactStatus');
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const subject = document.getElementById('contactSubject').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email || !phone || !subject || !message) {
+        status.textContent = 'Please fill all fields.';
+        status.style.color = '#dc2626';
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.textContent = 'Please enter a valid email address.';
+        status.style.color = '#dc2626';
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Sending…';
+      status.textContent = 'Sending message…';
+      status.style.color = '#64748b';
+
+      try {
+        const response = await fetch('{{ url_for("main.contact_submit") }}', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, subject, message })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          status.textContent = data.message;
+          status.style.color = '#16a34a';
+          form.reset();
+        } else {
+          status.textContent = data.message || 'Something went wrong. Please try again.';
+          status.style.color = '#dc2626';
+        }
+      } catch (err) {
+        status.textContent = 'Network error. Please try again.';
+        status.style.color = '#dc2626';
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = '<i class="bi bi-send-fill me-2"></i> Send Message';
+      }
+    });
+  }
+});
+</script>
+{% endblock %}
+

@@ -1,0 +1,8 @@
+# ByteNova Technologies
+# https://bytenova.tech
+
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://bytenova.tech/sitemap.xml

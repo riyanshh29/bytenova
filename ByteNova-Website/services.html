@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ByteNova Services — Python development, AI automation, web apps, APIs, and dashboards." />
+  <title>Services — ByteNova Technologies</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-card">
+      <div class="spinner-grow text-light" role="status"></div>
+      <div class="ms-2">
+        <div class="fw-bold">Loading ByteNova…</div>
+        <div class="small text-light opacity-75">Preparing your experience</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-sticky">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-mark" aria-hidden="true">BN</span>
+        <span class="brand-name">ByteNova</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5000/auth/login">Login</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-gradient btn-sm" href="contact.html"><i class="bi bi-chat-dots"></i> Get in touch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+
+    <section class="py-5 hero-sub">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7" data-aos="fade-up">
+            <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+              <i class="bi bi-gear-fill me-1"></i> Services
+            </div>
+            <h1 class="display-6 fw-bold text-white mt-3">Built for startups and SMEs</h1>
+            <p class="lead text-white opacity-90 mt-3 mb-0">
+              We deliver modern Python development, AI automation, REST APIs, business dashboards, and full-stack web solutions—fast, secure, and maintainable.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="portfolio.html" class="btn btn-light btn-lg px-4">
+                <i class="bi bi-briefcase-fill me-2"></i> See Portfolio
+              </a>
+              <a href="contact.html" class="btn btn-gradient btn-lg px-4">
+                <i class="bi bi-envelope-fill me-2"></i> Contact Us
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade-left">
+            <div class="card border-0 shadow-lg services-hero-card">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <div class="small text-muted">Delivery approach</div>
+                    <div class="fw-bold">Milestones you can track</div>
+                  </div>
+                  <i class="bi bi-check2-circle text-primary" style="font-size:2rem"></i>
+                </div>
+                <hr />
+                <ul class="check-list mb-0">
+                  <li><i class="bi bi-check2-circle"></i> Requirement discussion → scope clarity</li>
+                  <li><i class="bi bi-check2-circle"></i> Planning &amp; architecture</li>
+                  <li><i class="bi bi-check2-circle"></i> Development and frequent demos</li>
+                  <li><i class="bi bi-check2-circle"></i> Testing &amp; deployment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="services-grid">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <div>
+            <h2 class="section-title mb-1">Our Services</h2>
+            <p class="text-muted mb-0">Every engagement includes communication, quality checks, and reliable delivery.</p>
+          </div>
+          <a href="contact.html" class="btn btn-outline-primary">
+            <i class="bi bi-telephone-fill me-2"></i> Request a call
+          </a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up"><div class="service-card"><div class="service-icon"><i class="bi bi-filetype-py"></i></div><h5>Python Development</h5><p>Automations, backend services, and production-ready Python solutions.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80"><div class="service-card"><div class="service-icon"><i class="bi bi-window"></i></div><h5>Custom Web Applications</h5><p>Responsive web apps and dashboards tailored to your operations.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160"><div class="service-card"><div class="service-icon"><i class="bi bi-cpu"></i></div><h5>AI Automation</h5><p>Practical AI workflows that help teams save time and reduce manual work.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up"><div class="service-card"><div class="service-icon"><i class="bi bi-code-slash"></i></div><h5>REST API Development</h5><p>Reliable APIs with clean design, performance considerations, and docs.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80"><div class="service-card"><div class="service-icon"><i class="bi bi-bar-chart"></i></div><h5>Business Dashboards</h5><p>Actionable dashboards for sales, operations, finance and HR.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160"><div class="service-card"><div class="service-icon"><i class="bi bi-globe2"></i></div><h5>Website Development</h5><p>Modern marketing websites with SEO-friendly structure.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up"><div class="service-card"><div class="service-icon"><i class="bi bi-display"></i></div><h5>Desktop Software</h5><p>Utility-grade desktop applications for internal teams.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80"><div class="service-card"><div class="service-icon"><i class="bi bi-database"></i></div><h5>Database Solutions</h5><p>Database design, optimization and data pipeline support.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light" id="tech-stack">
+      <div class="container">
+        <h2 class="section-title mb-4">Tech Stack</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-3" data-aos="flip-left"><div class="tech-tile"><i class="bi bi-filetype-py"></i><span>Python</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="80"><div class="tech-tile"><i class="bi bi-diagram-3"></i><span>Flask</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="160"><div class="tech-tile"><i class="bi bi-filetype-html"></i><span>HTML5</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="240"><div class="tech-tile"><i class="bi bi-filetype-css"></i><span>CSS3</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left"><div class="tech-tile"><i class="bi bi-bootstrap"></i><span>Bootstrap</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="80"><div class="tech-tile"><i class="bi bi-braces"></i><span>JavaScript</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="160"><div class="tech-tile"><i class="bi bi-database"></i><span>SQLite</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="240"><div class="tech-tile"><i class="bi bi-git"></i><span>Git</span></div></div>
+          <div class="col-6 col-md-3" data-aos="flip-left"><div class="tech-tile"><i class="bi bi-diagram-2"></i><span>REST API</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="process">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Our Process</h2>
+        <div class="process-timeline" data-aos="fade-up">
+          <div class="step"><div class="step-num">1</div><div class="step-title">Requirement Discussion</div></div>
+          <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step"><div class="step-num">2</div><div class="step-title">Planning</div></div>
+          <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step"><div class="step-num">3</div><div class="step-title">Development</div></div>
+          <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step"><div class="step-num">4</div><div class="step-title">Testing</div></div>
+          <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step"><div class="step-num">5</div><div class="step-title">Deployment</div></div>
+          <div class="arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step"><div class="step-num">6</div><div class="step-title">Support</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7" data-aos="fade-up">
+            <h2 class="section-title mb-2">Why clients choose ByteNova</h2>
+            <p class="text-muted mb-0">Six strong reasons that keep engagements smooth and outcomes solid.</p>
+          </div>
+          <div class="col-lg-5 text-lg-end" data-aos="fade-left">
+            <a href="contact.html" class="btn btn-gradient btn-lg px-4"><i class="bi bi-rocket-fill me-2"></i> Start a project</a>
+          </div>
+        </div>
+        <div class="row g-4 mt-1">
+          <div class="col-md-6" data-aos="fade-up"><div class="feature-card"><i class="bi bi-cash-coin"></i><h5>Affordable Solutions</h5><p>Smart pricing for growing teams.</p></div></div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="80"><div class="feature-card"><i class="bi bi-lightning-charge-fill"></i><h5>Fast Delivery</h5><p>Short cycles and clear milestones.</p></div></div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="160"><div class="feature-card"><i class="bi bi-cpu-fill"></i><h5>Modern Technologies</h5><p>Maintainable stacks that scale.</p></div></div>
+          <div class="col-md-6" data-aos="fade-up"><div class="feature-card"><i class="bi bi-people-fill"></i><h5>Experienced Developers</h5><p>Practical expertise across Python & web.</p></div></div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="80"><div class="feature-card"><i class="bi bi-headset"></i><h5>Reliable Support</h5><p>Updates and quick fixes when needed.</p></div></div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="160"><div class="feature-card"><i class="bi bi-heart"></i><h5>Client First Approach</h5><p>Transparent communication and feedback loops.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-mark" aria-hidden="true">BN</span>
+            <div>
+              <div class="fw-bold">ByteNova Technologies</div>
+              <div class="text-muted small">Building Smart Software</div>
+            </div>
+          </div>
+          <div class="text-muted">&copy; 2025 ByteNova Technologies. All Rights Reserved.</div>
+        </div>
+        <div class="col-md-2">
+          <div class="fw-bold mb-2">Links</div>
+          <ul class="footer-links list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+            <li><a href="index.html#careers" class="footer-link">Careers</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="fw-bold mb-2">Legal</div>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="fw-bold mb-2">Social</div>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="social-pill" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a class="social-pill" href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-top border-white-10 d-flex flex-wrap justify-content-between align-items-center">
+        <div class="text-muted small">Smooth, modern, and fully responsive — built for a professional startup look.</div>
+        <button class="btn btn-link text-decoration-none back-to-top" id="backToTop" type="button">
+          <i class="bi bi-arrow-up-circle-fill"></i> Back to top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <button class="floating-contact" id="floatingContact" type="button" aria-label="Contact">
+    <i class="bi bi-chat-left-text-fill"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact ByteNova Technologies — Get in touch for software development, web development, mobile apps, AI, and cloud solutions. Based in Indore, India." />
+  <title>Contact Us — ByteNova Technologies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true"><div class="loading-content"><div class="loading-logo">ByteNova</div><div class="loading-spinner"></div><div class="loading-text">Loading</div></div></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar" id="siteNavbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand"><span class="brand-icon">BN</span> ByteNova</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a>
+        <a href="team.html">Team</a><a href="careers.html">Careers</a><a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 data-aos="fade-up">Contact Us</h1>
+      <p data-aos="fade-up" data-aos-delay="80">Have a project in mind? We'd love to hear from you. Get in touch with our team.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info" data-aos="fade-right">
+          <h3>Let's Build Something Great Together</h3>
+          <p>Fill in the form and our team will get back to you within 1-2 business days. Or reach out to us directly using any of the channels below.</p>
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <div><h5>Office Address</h5><span>Crystal IT Park, 5th Floor, Vijay Nagar, Indore, Madhya Pradesh – 452010, India</span></div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <div><h5>Phone</h5><span>+91 731 400 1234</span></div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div><h5>Email</h5><span>hello@bytenova.in</span></div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div><h5>Careers</h5><span>careers@bytenova.in</span></div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <div><h5>Business Hours</h5><span>Monday – Friday: 9:30 AM – 6:30 PM IST<br>Saturday: 10:00 AM – 2:00 PM IST<br>Sunday: Closed</span></div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <div><h5>Emergency Contact</h5><span>+91 98765 43210 (24/7 support)</span></div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-top: 30px;">
+            <a href="https://wa.me/917314001234" class="btn btn-primary" target="_blank" rel="noopener" style="flex: 1; text-align: center;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:hello@bytenova.in" class="btn btn-secondary" style="color: white; border-color: rgba(255,255,255,0.2); flex: 1; text-align: center;"><i class="fas fa-envelope"></i> Email Us</a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form" data-aos="fade-left">
+          <h3>Send Us a Message</h3>
+          <p style="color: var(--bn-gray); margin-bottom: 24px;">We typically respond within 1-2 business days.</p>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label for="cf_name">Full Name *</label><input type="text" id="cf_name" required placeholder="Your full name" /></div>
+              <div class="form-group"><label for="cf_email">Email Address *</label><input type="email" id="cf_email" required placeholder="you@example.com" /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="cf_phone">Phone Number</label><input type="tel" id="cf_phone" placeholder="+91 98765 43210" /></div>
+              <div class="form-group"><label for="cf_subject">Subject *</label>
+                <select id="cf_subject" required>
+                  <option value="">Select a topic</option>
+                  <option>Software Development</option>
+                  <option>Web Development</option>
+                  <option>Mobile App Development</option>
+                  <option>AI & Machine Learning</option>
+                  <option>Cloud Solutions</option>
+                  <option>Partnership Inquiry</option>
+                  <option>General Inquiry</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group"><label for="cf_message">Message *</label><textarea id="cf_message" required placeholder="Tell us about your project or inquiry..."></textarea></div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Send Message</button>
+            <div id="contactStatus" style="margin-top: 12px; font-size: 0.88rem; text-align: center; min-height: 24px;"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="map-container" data-aos="fade-up">
+        <iframe src="https://www.google.com/maps?q=Vijay+Nagar,+Indore,+Madhya+Pradesh&output=embed" allowfullscreen loading="lazy" title="ByteNova location on Google Maps"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Locations -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label"><i class="fas fa-building"></i> Locations</span>
+        <h2 class="section-title">Our Presence</h2>
+        <p class="section-desc">While headquartered in Indore, we serve clients across India.</p>
+      </div>
+      <div class="stats-grid" data-aos="fade-up" data-aos-delay="80">
+        <div class="stat-card"><div class="stat-number" data-count="1">0</div><div class="stat-label">Headquarters (Indore)</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="2">0</div><div class="stat-label">Satellite Offices</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="8">0</div><div class="stat-label">Cities Served</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="45">0</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-card"><div class="stat-number" data-count="24">0</div><div class="stat-label">Hour Response Time</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-brand"><span class="brand-icon">BN</span><span>ByteNova Technologies</span></div><p class="footer-about">Building Smart Software for Growing Businesses. Based in Indore, India.</p><div class="footer-social"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+        <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Services</h4><ul><li><a href="services.html#software">Software Development</a></li><li><a href="services.html#web">Web Development</a></li><li><a href="services.html#mobile">Mobile Apps</a></li><li><a href="services.html#ai">AI & ML</a></li></ul></div>
+        <div><h4>Contact</h4><ul class="footer-contact"><li><i class="fas fa-map-marker-alt"></i> Crystal IT Park, Indore, MP</li><li><i class="fas fa-phone-alt"></i> +91 731 400 1234</li><li><i class="fas fa-envelope"></i> hello@bytenova.in</li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 ByteNova Technologies. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="#">Terms</a><a href="faq.html">FAQ</a></div></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+  <a href="https://wa.me/917314001234" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="js/main.js"></script>
+</body>
+</html>

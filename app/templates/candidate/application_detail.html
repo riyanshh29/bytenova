@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Application — {{ application.job.title }}{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="{{ url_for('candidate.applications') }}">Applications</a></li>
+                <li class="breadcrumb-item active">{{ application.job.title }}</li>
+            </ol>
+        </nav>
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="fw-bold mb-1">{{ application.job.title }}</h1>
+                <p class="text-muted mb-0">{{ application.job.department }} · {{ application.job.location }}</p>
+            </div>
+            {% if interview_details %}
+            <span class="badge bg-success fs-6">{{ interview_details.status }}</span>
+            {% else %}
+            <span class="badge status-badge status-{{ application.status }} fs-6">{{ application.status_label }}</span>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                {% if interview_details %}
+                <div class="alert alert-success border-0 shadow-sm mb-4" role="alert">
+                    <div class="fw-bold">Congratulations!</div>
+                    <div>
+                        You have successfully cleared all previous recruitment stages.
+                        You are invited for the Final Face-to-Face Interview at ByteNova Technologies.
+                    </div>
+                </div>
+                {% else %}
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-4">Application Timeline</h5>
+                        <div class="timeline-vertical">
+                            <div class="timeline-item completed">
+                                <div class="timeline-marker"><i class="bi bi-check"></i></div>
+                                <div class="timeline-content">
+                                    <strong>Application Submitted</strong>
+                                    <small class="text-muted d-block">{{ application.applied_at.strftime('%B %d, %Y at %I:%M %p') }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if application.cover_letter and not interview_details %}
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Cover Letter</h5>
+                        <p class="text-muted">{{ application.cover_letter }}</p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Application Details</h5>
+                        {% if interview_details %}
+                        <dl class="mb-0">
+                            <dt class="text-muted small">Position</dt>
+                            <dd class="mb-3">{{ interview_details.position }}</dd>
+                            <dt class="text-muted small">Applied On</dt>
+                            <dd class="mb-3">{{ interview_details.applied_on }}</dd>
+                            <dt class="text-muted small">Current Status</dt>
+                            <dd class="mb-0">
+                                <span class="badge bg-success fs-6">{{ interview_details.status }}</span>
+                            </dd>
+                        </dl>
+                        {% else %}
+                        <dl class="mb-0">
+                            <dt class="text-muted small">Applied On</dt>
+                            <dd>{{ application.applied_at.strftime('%B %d, %Y') }}</dd>
+                            <dt class="text-muted small">Last Updated</dt>
+                            <dd>{{ application.updated_at.strftime('%B %d, %Y') }}</dd>
+                            <dt class="text-muted small">Resume</dt>
+                            <dd><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Uploaded</dd>
+                            <dt class="text-muted small">Job Type</dt>
+                            <dd>{{ application.job.job_type }}</dd>
+                        </dl>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if interview_details %}
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Interview Details</h5>
+                        <dl class="mb-0">
+                            <dt class="text-muted small">Interview Date</dt>
+                            <dd>{{ interview_details.date }}</dd>
+
+                            <dt class="text-muted small mt-3">Reporting Time</dt>
+                            <dd>{{ interview_details.reporting_time }}</dd>
+
+                            <dt class="text-muted small mt-3">Duration</dt>
+                            <dd>{{ interview_details.duration }}</dd>
+
+                            <dt class="text-muted small mt-3">Venue</dt>
+                            <dd class="mb-0">{{ interview_details.venue_lines|join('<br>')|safe }}</dd>
+
+                            <dt class="text-muted small mt-3">Reporting HR</dt>
+                            <dd class="mb-0">{{ interview_details.reporting_hr }}</dd>
+                        </dl>
+                        <hr>
+                        <a href="{{ url_for('candidate.download_interview_call_letter', app_id=application.id) }}" class="btn btn-primary w-100">
+                            Download Interview Call Letter
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

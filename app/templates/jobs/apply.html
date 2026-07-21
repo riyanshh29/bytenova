@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Apply — {{ job.title }}{% endblock %}
+
+{% block content %}
+<section class="page-header py-5 bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('jobs.list_jobs') }}">Jobs</a></li>
+                <li class="breadcrumb-item"><a href="{{ url_for('jobs.job_detail', job_id=job.id) }}">{{ job.title }}</a></li>
+                <li class="breadcrumb-item active">Apply</li>
+            </ol>
+        </nav>
+        <h1 class="fw-bold">Apply for {{ job.title }}</h1>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-5">
+                        <form method="POST" enctype="multipart/form-data" id="applyForm">
+                            <div class="mb-4">
+                                <label for="resume" class="form-label fw-semibold">Resume (PDF only) *</label>
+                                <input type="file" class="form-control form-control-lg" id="resume" name="resume" accept=".pdf,application/pdf" required>
+                                <div class="form-text">Maximum file size: 5 MB. Only PDF format accepted.</div>
+                                <div id="filePreview" class="mt-2 small text-success d-none">
+                                    <i class="bi bi-file-earmark-pdf me-1"></i><span id="fileName"></span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="cover_letter" class="form-label fw-semibold">Cover Letter (optional)</label>
+                                <textarea class="form-control" id="cover_letter" name="cover_letter" rows="6"
+                                    placeholder="Tell us why you're excited about this role at ByteNova..."></textarea>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <button type="submit" class="btn btn-primary btn-lg flex-grow-1">
+                                    <i class="bi bi-send me-2"></i>Submit Application
+                                </button>
+                                <a href="{{ url_for('jobs.job_detail', job_id=job.id) }}" class="btn btn-outline-secondary btn-lg">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Preview selected PDF filename before upload
+    document.getElementById('resume').addEventListener('change', function(e) {
+        const preview = document.getElementById('filePreview');
+        const fileName = document.getElementById('fileName');
+        if (e.target.files.length > 0) {
+            const file = e.target.files[0];
+            if (file.type !== 'application/pdf') {
+                alert('Only PDF files are allowed.');
+                e.target.value = '';
+                preview.classList.add('d-none');
+                return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File size must be under 5 MB.');
+                e.target.value = '';
+                preview.classList.add('d-none');
+                return;
+            }
+            fileName.textContent = file.name;
+            preview.classList.remove('d-none');
+        }
+    });
+</script>
+{% endblock %}

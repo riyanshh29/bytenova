@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Applicants — {{ job.title }}{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="{{ url_for('recruiter.dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">{{ job.title }}</li>
+            </ol>
+        </nav>
+        <h1 class="fw-bold">Applicants for {{ job.title }}</h1>
+        <p class="text-muted">{{ applications|length }} application{{ 's' if applications|length != 1 else '' }}</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        {% if applications %}
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Email</th>
+                        <th>Applied</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in applications %}
+                    <tr>
+                        <td class="fw-semibold">{{ app.candidate.full_name }}</td>
+                        <td>{{ app.candidate.email }}</td>
+                        <td>{{ app.applied_at.strftime('%b %d, %Y') }}</td>
+                        <td><span class="badge status-badge status-{{ app.status }}">{{ app.status_label }}</span></td>
+                        <td><a href="{{ url_for('recruiter.review_application', app_id=app.id) }}" class="btn btn-sm btn-primary">Review</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-5 bg-light rounded">
+            <p class="text-muted">No applications for this job yet.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% block title %}Careers — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5 hero-sub">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7" data-aos="fade-up">
+        <div class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 shadow-sm">
+          <i class="bi bi-people-fill me-1"></i> Careers
+        </div>
+        <h1 class="display-6 fw-bold text-white mt-3">Join the ByteNova Team</h1>
+        <p class="lead text-white opacity-90 mt-3 mb-0">
+          Be part of a small, passionate team building smart software for growing businesses across India.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="{{ url_for('jobs.list_jobs') }}" class="btn btn-light btn-lg px-4">
+            <i class="bi bi-search me-2"></i> View Open Positions
+            {% if open_positions > 0 %}<span class="badge bg-primary ms-2">{{ open_positions }}</span>{% endif %}
+          </a>
+          <a href="{{ url_for('main.contact') }}" class="btn btn-gradient btn-lg px-4">
+            <i class="bi bi-chat-dots me-2"></i> Talk to Us
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+        <div class="card border-0 shadow-lg" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18);">
+          <div class="card-body p-4 text-white">
+            <div class="text-center">
+              <i class="bi bi-lightbulb-fill display-5" style="color: #fbbf24;"></i>
+              <div class="fw-bold mt-3 fs-5">Small team. Big impact.</div>
+              <div class="text-white-50">Indore-based — remote friendly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Join Us -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Why Join ByteNova?</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="feature-card"><i class="bi bi-house-heart"></i><h5>Hybrid Work</h5><p>Work from our Indore office or remotely — we trust our team to deliver.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+        <div class="feature-card"><i class="bi bi-mortarboard"></i><h5>Learning Budget</h5><p>₹25,000 each year for courses, conferences, and certifications.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+        <div class="feature-card"><i class="bi bi-calendar-check"></i><h5>Flexible Leave</h5><p>Take planned time to recharge, celebrate, and manage life outside work.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="feature-card"><i class="bi bi-cash-stack"></i><h5>Early-Team ESOP</h5><p>Full-time teammates can participate in our ESOP as we grow.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+        <div class="feature-card"><i class="bi bi-graph-up-arrow"></i><h5>Real Impact</h5><p>Build client-focused software that makes a visible difference for real businesses.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+        <div class="feature-card"><i class="bi bi-people"></i><h5>Inclusive Culture</h5><p>A learning environment where ideas are shared, ownership is encouraged, and growth is supported.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hiring Process -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="section-title mb-5">Our Hiring Process</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-2" data-aos="fade-up">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <p class="small fw-semibold mt-2">Apply Online</p>
+        </div>
+      </div>
+      <div class="col-md-2" data-aos="fade-up" data-aos-delay="80">
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <p class="small fw-semibold mt-2">Recruiter Screen</p>
+        </div>
+      </div>
+      <div class="col-md-2" data-aos="fade-up" data-aos-delay="160">
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <p class="small fw-semibold mt-2">Technical Interview</p>
+        </div>
+      </div>
+      <div class="col-md-2" data-aos="fade-up" data-aos-delay="240">
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <p class="small fw-semibold mt-2">Team Meet</p>
+        </div>
+      </div>
+      <div class="col-md-2" data-aos="fade-up" data-aos-delay="300">
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <p class="small fw-semibold mt-2">Offer!</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5" data-aos="fade-up">
+      <a href="{{ url_for('jobs.list_jobs') }}" class="btn btn-gradient btn-lg px-5">
+        <i class="bi bi-briefcase-fill me-2"></i> View Open Positions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Employee Testimonials -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">What Our Team Says</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"ByteNova gives me the freedom to explore new technologies while working on real client projects. The learning here is incredible."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">RM</div>
+            <div><div class="fw-bold">Rahul Mehta</div><div class="text-muted small">Senior Python Developer</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"The hybrid work culture and learning budget make ByteNova a great place for early-career developers who want to grow fast."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">AD</div>
+            <div><div class="fw-bold">Aditi Deshmukh</div><div class="text-muted small">Web Developer</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="text-muted">"Working at ByteNova means your work actually matters. Every project has a real client who depends on what we build."</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">SN</div>
+            <div><div class="fw-bold">Sneha Nair</div><div class="text-muted small">AI Automation Engineer</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest News Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Latest News</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="badge bg-primary mb-2">Company</div>
+            <h5 class="fw-bold">ByteNova Opens New Development Hub</h5>
+            <p class="text-muted small">We've expanded our Indore office to accommodate our growing team of Python and AI engineers.</p>
+            <div class="text-muted small">March 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="badge bg-success mb-2">Projects</div>
+            <h5 class="fw-bold">Delivered 35+ Projects in First Year</h5>
+            <p class="text-muted small">From hospital management systems to AI automation, our team has delivered impactful software across India.</p>
+            <div class="text-muted small">June 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="badge bg-info mb-2">Community</div>
+            <h5 class="fw-bold">Hiring Interns for Python & Web Roles</h5>
+            <p class="text-muted small">We're looking for passionate developers to join our Indore team. Apply now and grow with us.</p>
+            <div class="text-muted small">July 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5" style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="fw-bold text-white mb-3">Ready to Make Your Mark?</h2>
+    <p class="text-white opacity-75 mb-4">Create your candidate profile and start applying today.</p>
+    {% if not current_user.is_authenticated %}
+    <a href="{{ url_for('auth.register') }}" class="btn btn-light btn-lg px-5">
+      <i class="bi bi-person-plus me-2"></i>Create Account
+    </a>
+    {% else %}
+    <a href="{{ url_for('jobs.list_jobs') }}" class="btn btn-light btn-lg px-5">
+      <i class="bi bi-search me-2"></i>Browse Jobs
+    </a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+

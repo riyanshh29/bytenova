@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Sign In{% endblock %}
+
+{% block content %}
+<section class="auth-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-lightning-charge-fill text-primary fs-1"></i>
+                            <h2 class="fw-bold mt-2">Welcome Back</h2>
+                            <p class="text-muted">Sign in to your ByteNova account</p>
+                        </div>
+                        <form method="POST" action="{{ url_for('auth.login') }}">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control form-control-lg" id="email" name="email" required autofocus>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control form-control-lg" id="password" name="password" required>
+                            </div>
+                            <div class="mb-4 form-check">
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                <label class="form-check-label" for="remember">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Sign In</button>
+                        </form>
+                        <hr class="my-4">
+                        <p class="text-center text-muted mb-0">
+                            New candidate? <a href="{{ url_for('auth.register') }}">Create an account</a>
+                        </p>
+                        <div class="mt-4 p-3 bg-light rounded small text-muted">
+                            <strong>Demo accounts:</strong><br>
+                            Admin: admin@bytenova.tech / admin123<br>
+                            Recruiter: recruiter@bytenova.tech / recruiter123<br>
+                            Candidate: riyansh@bytenova.in / candidate123
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

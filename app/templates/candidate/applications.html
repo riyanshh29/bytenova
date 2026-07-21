@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}My Applications{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container">
+        <h1 class="fw-bold">My Applications</h1>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        {% if applications %}
+        <div class="row g-4">
+            {% for app in applications %}
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">{{ app.job.title }}</h5>
+                                <small class="text-muted">{{ app.job.department }} · {{ app.job.location }}</small>
+                            </div>
+                            <span class="badge status-badge status-{{ app.status }}">{{ app.status_label }}</span>
+                        </div>
+                        <!-- Application status timeline -->
+                        <div class="status-timeline mb-3">
+                            {% set steps = ['submitted', 'under_review', 'interview', 'offered'] %}
+                            {% for step in steps %}
+                            <div class="timeline-step {% if app.status == step or (app.status == 'rejected' and loop.index <= 2) %}active{% elif app.status in steps and loop.index0 < steps.index(app.status) %}completed{% endif %}">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <small class="text-muted">Applied {{ app.applied_at.strftime('%B %d, %Y') }}</small>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 p-4 pt-0">
+                        <a href="{{ url_for('candidate.application_detail', app_id=app.id) }}" class="btn btn-outline-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <p class="text-muted">No applications yet.</p>
+            <a href="{{ url_for('jobs.list_jobs') }}" class="btn btn-primary">Browse Jobs</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

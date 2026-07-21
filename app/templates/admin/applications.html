@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}All Applications{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container">
+        <h1 class="fw-bold">All Applications</h1>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <!-- Status filter -->
+        <div class="mb-4">
+            <a href="{{ url_for('admin.applications') }}" class="btn btn-sm {% if not status_filter %}btn-primary{% else %}btn-outline-primary{% endif %} me-1">All</a>
+            {% for s in statuses %}
+            <a href="{{ url_for('admin.applications', status=s) }}" class="btn btn-sm {% if status_filter == s %}btn-primary{% else %}btn-outline-primary{% endif %} me-1">{{ s|replace('_', ' ')|title }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Job</th>
+                        <th>Department</th>
+                        <th>Applied</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in applications %}
+                    <tr>
+                        <td>{{ app.candidate.full_name }}</td>
+                        <td>{{ app.job.title }}</td>
+                        <td>{{ app.job.department }}</td>
+                        <td>{{ app.applied_at.strftime('%b %d, %Y') }}</td>
+                        <td><span class="badge status-badge status-{{ app.status }}">{{ app.status_label }}</span></td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="5" class="text-center text-muted py-4">No applications found.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

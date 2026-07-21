@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Interview Invitation{% endblock %}
+
+{% block content %}
+<section class="dashboard-header py-4 bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="{{ url_for('candidate.dashboard') }}">My Portal</a></li>
+                <li class="breadcrumb-item active">Interview Invitation</li>
+            </ol>
+        </nav>
+        <h1 class="fw-bold mb-1">Interview Invitation</h1>
+        <p class="text-muted mb-0">Official communication from ByteNova Technologies</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9">
+                <article class="card border-0 shadow-sm overflow-hidden">
+                    <div class="card-body bg-primary text-white p-4 p-md-5">
+                        <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="bg-white text-primary rounded-3 d-inline-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                    <i class="bi bi-lightning-charge-fill fs-3"></i>
+                                </span>
+                                <div>
+                                    <h2 class="h3 fw-bold mb-1">ByteNova Technologies</h2>
+                                    <p class="mb-0 opacity-75">Interview Call Letter</p>
+                                </div>
+                            </div>
+                            <div class="text-md-end small opacity-75">
+                                <div>Application ID: {{ details.application_reference }}</div>
+                                <div>Issued for {{ details.candidate_name }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5">
+                        <p class="text-muted small text-uppercase fw-semibold mb-4">Final recruitment round</p>
+                        <p>Dear {{ details.candidate_name }},</p>
+                        <h3 class="fw-bold text-success mb-3">Congratulations!</h3>
+                        <p>You have successfully cleared the Resume Screening, Python Assessment, Technical Interview and HR Discussion.</p>
+                        <p>We are pleased to invite you for the Final Face-to-Face Interview for the <strong>{{ details.position }}</strong> position.</p>
+
+                        <div class="row g-3 my-4">
+                            <div class="col-md-6">
+                                <div class="border rounded-3 h-100 p-3 bg-light">
+                                    <small class="text-muted d-block">Interview Date</small>
+                                    <strong>{{ details.date }}</strong>
+                                    <small class="text-muted d-block mt-3">Reporting Time</small>
+                                    <strong>{{ details.reporting_time }}</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="border rounded-3 h-100 p-3 bg-light">
+                                    <small class="text-muted d-block">Interview Type</small>
+                                    <strong>{{ details.interview_type }}</strong>
+                                    <small class="text-muted d-block mt-3">Duration</small>
+                                    <strong>{{ details.duration }}</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-start border-4 border-primary ps-3 my-4">
+                            <h4 class="h6 fw-bold">Venue</h4>
+                            <p class="mb-0">{% for line in details.venue_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+                        </div>
+
+                        <p>Please report 30 minutes before your interview and carry a government photo ID, two printed copies of your resume, your laptop, a passport size photograph, and academic certificates.</p>
+                        <p class="mb-1">For any assistance, please contact <strong>{{ details.reporting_hr }}</strong>, {{ details.hr_designation }}.</p>
+                        <p class="text-muted small">{{ details.recruiter_email }} · {{ details.recruiter_phone }} · {{ details.office_hours }}</p>
+
+                        <hr class="my-4">
+                        <p class="mb-4">We wish you all the best for your interview.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="{{ url_for('candidate.download_interview_call_letter', app_id=application.id) }}" class="btn btn-primary">
+                                <i class="bi bi-download me-1"></i>Download Interview Call Letter
+                            </a>
+                            <a href="{{ url_for('candidate.dashboard') }}" class="btn btn-outline-secondary">Back to My Portal</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
