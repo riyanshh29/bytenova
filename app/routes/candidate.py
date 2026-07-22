@@ -26,12 +26,12 @@ INTERVIEW_DETAILS = {
         "3rd Floor, Vijay Nagar",
         "Indore, Madhya Pradesh",
     ],
-    "interviewer": "Manya Gupta",
-    "interviewer_designation": "HR & Talent Acquisition",
-    "reporting_hr": "Manya Gupta",
-    "hr_designation": "HR & Talent Acquisition",
-    "recruiter_email": "ManyaGupta@bytenova.in",
-    "recruiter_phone": "+91 99683 67711",
+    "interviewer": "Shubhangi Sharma",
+    "interviewer_designation": "Founder & CEO",
+    "reporting_hr": "Shubhangi Sharma",
+    "hr_designation": "Founder & CEO",
+    "recruiter_email": "shubhangi.sharma@bytenova.tech",
+    "recruiter_phone": "+91 79999 26837",
     "office_hours": "Monday – Friday, 9:30 AM – 6:30 PM IST",
     "timeline": [
         ("Application Submitted", "16 May 2026", "check-circle-fill"),
@@ -123,12 +123,12 @@ def _build_call_letter_pdf(details: dict) -> bytes:
 
     v -= 42
     commands.append("0.31 0.27 0.89 rg 48 {} 140 0.5 re f".format(v + 20))
-    commands.append(_pdf_text(48, v, "Aditi Sharma", "F2", 11, "0.16 0.2 0.28"))
-    commands.append(_pdf_text(48, v - 15, "HR & Talent Acquisition", "F1", 9, "0.35 0.4 0.48"))
+    commands.append(_pdf_text(48, v, "Shubhangi Sharma", "F2", 11, "0.16 0.2 0.28"))
+    commands.append(_pdf_text(48, v - 15, "Founder & CEO", "F1", 9, "0.35 0.4 0.48"))
     commands.append(_pdf_text(48, v - 30, "ByteNova Technologies", "F1", 9, "0.35 0.4 0.48"))
 
     commands.append(_pdf_text(48, 56, "ByteNova Technologies | 3rd Floor, Vijay Nagar, Indore, Madhya Pradesh", "F1", 8, "0.35 0.4 0.48"))
-    commands.append(_pdf_text(48, 44, "Phone: +91 731 400 1234 | Email: careers@bytenova.in", "F1", 8, "0.35 0.4 0.48"))
+    commands.append(_pdf_text(48, 44, "Phone: +91 79999 26837 | Email: shubhangi.sharma@bytenova.tech", "F1", 8, "0.35 0.4 0.48"))
 
     stream = "\n".join(commands).encode("latin-1", "replace")
     objects = [
