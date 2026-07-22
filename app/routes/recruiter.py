@@ -136,4 +136,8 @@ def review_application(app_id):
             flash("Invalid status selected.", "danger")
         return redirect(url_for("recruiter.review_application", app_id=app_id))
 
-    return render_template("recruiter/review_application.html", application=application)
+    return render_template(
+        "recruiter/review_application.html",
+        application=application,
+        status_choices=Application.STATUS_CHOICES,
+    )

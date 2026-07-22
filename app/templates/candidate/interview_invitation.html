@@ -30,13 +30,10 @@
                                     <h2 class="h3 fw-bold mb-1">ByteNova Technologies</h2>
                                     <p class="mb-0 opacity-75">Interview Call Letter</p>
                                 </div>
-                            </div>
                             <div class="text-md-end small opacity-75">
                                 <div>Application ID: {{ details.application_reference }}</div>
                                 <div>Issued for {{ details.candidate_name }}</div>
-                            </div>
                         </div>
-                    </div>
 
                     <div class="card-body p-4 p-md-5">
                         <p class="text-muted small text-uppercase fw-semibold mb-4">Final recruitment round</p>
@@ -50,10 +47,11 @@
                                 <div class="border rounded-3 h-100 p-3 bg-light">
                                     <small class="text-muted d-block">Interview Date</small>
                                     <strong>{{ details.date }}</strong>
+                                    <small class="text-muted d-block mt-3">Time</small>
+                                    <strong>{{ details.time }}</strong>
                                     <small class="text-muted d-block mt-3">Reporting Time</small>
                                     <strong>{{ details.reporting_time }}</strong>
                                 </div>
-                            </div>
                             <div class="col-md-6">
                                 <div class="border rounded-3 h-100 p-3 bg-light">
                                     <small class="text-muted d-block">Interview Type</small>
@@ -61,12 +59,11 @@
                                     <small class="text-muted d-block mt-3">Duration</small>
                                     <strong>{{ details.duration }}</strong>
                                 </div>
-                            </div>
                         </div>
 
                         <div class="border-start border-4 border-primary ps-3 my-4">
                             <h4 class="h6 fw-bold">Venue</h4>
-                            <p class="mb-0">{% for line in details.venue_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+                            <p class="mb-0">ByteNova Technologies, Vijay Nagar, Indore, Madhya Pradesh</p>
                         </div>
 
                         <p>Please report 30 minutes before your interview and carry a government photo ID, two printed copies of your resume, your laptop, a passport size photograph, and academic certificates.</p>
@@ -81,10 +78,8 @@
                             </a>
                             <a href="{{ url_for('candidate.dashboard') }}" class="btn btn-outline-secondary">Back to My Portal</a>
                         </div>
-                    </div>
                 </article>
             </div>
-        </div>
     </div>
 </section>
 {% endblock %}

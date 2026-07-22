@@ -104,7 +104,6 @@ def _seed_default_users(app):
 
     db.session.commit()
 
-    # Starter roles for ByteNova's small Indian software team.
     if Job.query.count() == 0:
         sample_jobs = [
             Job(
@@ -183,13 +182,13 @@ def _seed_default_users(app):
         db.session.add_all(sample_jobs)
         db.session.commit()
 
-    internship = Job.query.filter_by(title="Python Developer Intern").first()
-    if internship and not Application.query.filter_by(
-        candidate_id=candidate.id, job_id=internship.id
+    first_job = Job.query.first()
+    if first_job and not Application.query.filter_by(
+        candidate_id=candidate.id, job_id=first_job.id
     ).first():
         application = Application(
             candidate_id=candidate.id,
-            job_id=internship.id,
+            job_id=first_job.id,
             resume_filename="riyansh_python_resume.pdf",
             cover_letter=(
                 "I am excited to begin my software development career with ByteNova "
@@ -197,7 +196,7 @@ def _seed_default_users(app):
             ),
             status="interview",
             applied_at=datetime(2026, 5, 16, 10, 0, tzinfo=timezone.utc),
-            updated_at=datetime(2026, 7, 1, 10, 0, tzinfo=timezone.utc),
+            updated_at=datetime(2026, 7, 21, 10, 0, tzinfo=timezone.utc),
         )
         db.session.add(application)
         db.session.commit()

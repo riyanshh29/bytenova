@@ -19,18 +19,16 @@
                         <i class="bi bi-check-circle-fill text-success fs-2"></i>
                         <div>
                             <h3 class="fw-bold text-success mb-2">Congratulations!</h3>
-                            <p class="mb-2">You have successfully cleared all previous recruitment stages.</p>
-                            <p class="mb-0">We are pleased to invite you for the Final Face-to-Face Interview at our Indore office.</p>
+                            <p class="mb-0">You have successfully cleared all previous rounds. Your final face-to-face interview has been scheduled.</p>
                         </div>
-                    </div>
                     <div class="text-md-end text-success-emphasis small">
                         <div class="fw-semibold">Interview Date</div>
                         <div>{{ interview_details.date }}</div>
+                        <div class="fw-semibold mt-2">Time</div>
+                        <div>{{ interview_details.time }}</div>
                         <div class="fw-semibold mt-2">Reporting Time</div>
                         <div>{{ interview_details.reporting_time }}</div>
-                    </div>
                 </div>
-            </div>
         </div>
 
         <div class="row g-4 mb-5">
@@ -40,7 +38,6 @@
                         <h2 class="fw-bold text-primary mb-1">{{ applications|length }}</h2>
                         <small class="text-muted">Total Applications</small>
                     </div>
-                </div>
             </div>
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm stat-card h-100">
@@ -48,7 +45,6 @@
                         <h2 class="fw-bold text-warning mb-1">{{ in_progress }}</h2>
                         <small class="text-muted">Applications In Progress</small>
                     </div>
-                </div>
             </div>
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm stat-card h-100">
@@ -56,9 +52,7 @@
                         <h2 class="fw-bold text-success mb-1">{{ interview_invitations }}</h2>
                         <small class="text-muted">Interview Invitations</small>
                     </div>
-                </div>
             </div>
-        </div>
 
         <div class="card border-0 shadow-sm mb-5">
             <div class="card-body p-4 p-md-5">
@@ -87,7 +81,6 @@
                         <small class="text-muted d-block">Application ID</small>
                         <span class="fw-semibold">{{ interview_details.application_reference }}</span>
                     </div>
-                </div>
                 <div class="mt-4 d-flex flex-wrap gap-2">
                     <a href="{{ url_for('candidate.interview_invitation', app_id=interview_application.id) }}" class="btn btn-primary">
                         <i class="bi bi-envelope-paper me-1"></i>View Interview Invitation
@@ -96,7 +89,6 @@
                         <i class="bi bi-download me-1"></i>Download Interview Call Letter
                     </a>
                 </div>
-            </div>
         </div>
 
         <div class="row g-4">
@@ -114,28 +106,24 @@
                                     <strong>{{ title }}</strong>
                                     <small class="text-muted d-block">{{ date }}</small>
                                 </div>
-                            </div>
                             {% endfor %}
                         </div>
-                    </div>
                 </div>
-            </div>
             <div class="col-lg-5">
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-4">Interview Details</h4>
                         <dl class="row mb-0 small">
-                            <dt class="col-5 text-muted">Company</dt><dd class="col-7">{{ interview_details.company }}</dd>
-                            <dt class="col-5 text-muted">Interview Type</dt><dd class="col-7">{{ interview_details.interview_type }}</dd>
-                            <dt class="col-5 text-muted">Date</dt><dd class="col-7">{{ interview_details.date }}</dd>
+                            <dt class="col-5 text-muted">Interview Date</dt><dd class="col-7">{{ interview_details.date }}</dd>
+                            <dt class="col-5 text-muted">Time</dt><dd class="col-7">{{ interview_details.time }}</dd>
                             <dt class="col-5 text-muted">Reporting Time</dt><dd class="col-7">{{ interview_details.reporting_time }}</dd>
+                            <dt class="col-5 text-muted">Interview Type</dt><dd class="col-7">{{ interview_details.interview_type }}</dd>
                             <dt class="col-5 text-muted">Duration</dt><dd class="col-7">{{ interview_details.duration }}</dd>
                             <dt class="col-5 text-muted">Reporting HR</dt><dd class="col-7">{{ interview_details.reporting_hr }}<br><span class="text-muted">{{ interview_details.hr_designation }}</span></dd>
                             <dt class="col-5 text-muted">Venue</dt>
-                            <dd class="col-7 mb-0">{% for line in interview_details.venue_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
+                            <dd class="col-7 mb-0">ByteNova Technologies, Vijay Nagar, Indore, Madhya Pradesh</dd>
                         </dl>
                     </div>
-                </div>
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-3">Travel Instructions</h4>
@@ -150,7 +138,6 @@
                             <li>Academic Certificates</li>
                         </ul>
                     </div>
-                </div>
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-3">Need Assistance?</h4>
@@ -160,9 +147,7 @@
                         <p class="small mb-1"><i class="bi bi-telephone text-primary me-2"></i>{{ interview_details.recruiter_phone }}</p>
                         <p class="small text-muted mb-0"><i class="bi bi-clock text-primary me-2"></i>{{ interview_details.office_hours }}</p>
                     </div>
-                </div>
             </div>
-        </div>
         {% else %}
         <div class="text-center py-5 bg-light rounded">
             <i class="bi bi-file-earmark-text fs-1 text-muted"></i>

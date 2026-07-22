@@ -67,16 +67,20 @@ def job_detail(job_id):
         abort(404)
 
     already_applied = False
+    existing_application_id = None
     if current_user.is_authenticated and current_user.is_candidate:
-        already_applied = (
-            Application.query.filter_by(
-                candidate_id=current_user.id, job_id=job.id
-            ).first()
-            is not None
-        )
+        existing_app = Application.query.filter_by(
+            candidate_id=current_user.id, job_id=job.id
+        ).first()
+        if existing_app:
+            already_applied = True
+            existing_application_id = existing_app.id
 
     return render_template(
-        "jobs/detail.html", job=job, already_applied=already_applied
+        "jobs/detail.html",
+        job=job,
+        already_applied=already_applied,
+        existing_application_id=existing_application_id,
     )
 
 

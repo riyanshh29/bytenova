@@ -16,28 +16,30 @@ INTERVIEW_DETAILS = {
     "application_reference": "BNT-2026-1047",
     "status": "Face-to-Face Interview Scheduled",
     "date": "25 July 2026",
-    "reporting_time": "10:00 AM IST",
-    "duration": "45–60 Minutes",
+    "time": "10:00 AM",
+    "reporting_time": "9:30 AM",
+    "duration": "Approximately 1 Hour",
     "interview_type": "Face-to-Face",
     "company": "ByteNova Technologies",
     "venue_lines": [
         "ByteNova Technologies",
-        "5th Floor, Crystal IT Park",
-        "Vijay Nagar, Indore",
-        "Madhya Pradesh – 452010",
+        "3rd Floor, Vijay Nagar",
+        "Indore, Madhya Pradesh",
     ],
-    "reporting_hr": "Ms. Priya Sharma",
-    "hr_designation": "HR Executive",
-    "recruiter_email": "careers@bytenova.in",
-    "recruiter_phone": "+91 731 400 1234",
+    "interviewer": "Manya Gupta",
+    "interviewer_designation": "HR & Talent Acquisition",
+    "reporting_hr": "Manya Gupta",
+    "hr_designation": "HR & Talent Acquisition",
+    "recruiter_email": "ManyaGupta@bytenova.in",
+    "recruiter_phone": "+91 99683 67711",
     "office_hours": "Monday – Friday, 9:30 AM – 6:30 PM IST",
     "timeline": [
         ("Application Submitted", "16 May 2026", "check-circle-fill"),
-        ("Resume Shortlisted", "18 May 2026", "check-circle-fill"),
-        ("Online Python Assessment Cleared", "22 May 2026", "check-circle-fill"),
-        ("Technical Interview Cleared", "27 May 2026", "check-circle-fill"),
-        ("HR Discussion Completed", "30 May 2026", "check-circle-fill"),
-        ("Final Face-to-Face Interview", "25 July 2026", "calendar-event-fill"),
+        ("Resume Screening Cleared", "18 May 2026", "check-circle-fill"),
+        ("Python Assessment Passed", "24 May 2026", "check-circle-fill"),
+        ("Technical Interview Cleared", "8 June 2026", "check-circle-fill"),
+        ("HR Discussion Completed", "20 June 2026", "check-circle-fill"),
+        ("Face-to-Face Interview Scheduled", "25 July 2026", "calendar-event-fill"),
     ],
 }
 
@@ -50,6 +52,7 @@ def _interview_context(application: Application) -> dict:
         # Per requirement: force the display values on the interview status page.
         "position": "Python Developer Intern",
         "applied_on": "16 May 2026",
+        "last_updated": "20 July 2026",
         "department": application.job.department,
         "employment_type": application.job.job_type,
         "location": "Indore, Madhya Pradesh",
@@ -80,46 +83,52 @@ def _build_call_letter_pdf(details: dict) -> bytes:
         _pdf_text(48, 700, "Application Reference: " + details["application_reference"], "F1", 10, "0.25 0.29 0.36"),
     ]
 
-    y = 670
-    letter_lines = [
+    y = 665
+    body = [
         f"Dear {details['candidate_name']},",
         "",
-        "Congratulations! You have successfully cleared the Resume Screening, Python Assessment,",
-        "Technical Interview, and HR Discussion.",
-        "",
-        "We are pleased to invite you for the Final Face-to-Face Interview at our Indore office.",
+        "Congratulations! You have successfully cleared all previous recruitment rounds.",
+        "We are pleased to schedule your final Face-to-Face Interview at ByteNova.",
     ]
-    for line in letter_lines:
+    for line in body:
         commands.append(_pdf_text(48, y, line, "F1", 10, "0.16 0.2 0.28"))
-        y -= 16
+        y -= 18
 
-    y -= 4
-    commands.append("0.94 0.95 1 rg 48 445 499 112 re f")
+    y -= 6
+    commands.append("0.94 0.95 1 rg 48 418 499 136 re f")
     commands.append(_pdf_text(62, 535, "Interview Details", "F2", 12, "0.31 0.27 0.89"))
-    detail_lines = [
-        ("Position", details["position"]),
+    details_list = [
+        ("Job Title", details["position"]),
+        ("Candidate Name", details["candidate_name"]),
         ("Interview Date", details["date"]),
         ("Reporting Time", details["reporting_time"]),
-        ("Duration", details["duration"]),
-        ("Reporting HR", details["reporting_hr"] + ", " + details["hr_designation"]),
+        ("Interview Time", details["time"]),
     ]
-    y = 515
-    for label, value in detail_lines:
-        commands.append(_pdf_text(62, y, f"{label}:", "F2", 10, "0.16 0.2 0.28"))
-        commands.append(_pdf_text(168, y, value, "F1", 10, "0.16 0.2 0.28"))
-        y -= 17
+    yy = 513
+    for label, val in details_list:
+        commands.append(_pdf_text(62, yy, f"{label}:", "F2", 10, "0.16 0.2 0.28"))
+        commands.append(_pdf_text(215, yy, val, "F1", 10, "0.16 0.2 0.28"))
+        yy -= 18
 
-    commands.append(_pdf_text(48, 420, "Venue", "F2", 12, "0.31 0.27 0.89"))
-    y = 402
+    commands.append(_pdf_text(48, 396, "Venue", "F2", 12, "0.31 0.27 0.89"))
+    v = 376
     for line in details["venue_lines"]:
-        commands.append(_pdf_text(48, y, line, "F1", 10, "0.16 0.2 0.28"))
-        y -= 15
+        commands.append(_pdf_text(48, v, line, "F1", 10, "0.16 0.2 0.28"))
+        v -= 16
 
-    y -= 8
-    commands.append(_pdf_text(48, y, "Please report 30 minutes before your scheduled interview time.", "F1", 10, "0.16 0.2 0.28"))
-    y -= 28
-    commands.append(_pdf_text(48, y, "We wish you all the best for your interview.", "F2", 11, "0.31 0.27 0.89"))
-    commands.append(_pdf_text(48, 56, "ByteNova Technologies | Crystal IT Park, Vijay Nagar, Indore, Madhya Pradesh", "F1", 8, "0.35 0.4 0.48"))
+    v -= 10
+    commands.append(_pdf_text(48, v, "Please report at least 30 minutes before the scheduled time.", "F1", 10, "0.16 0.2 0.28"))
+    v -= 26
+    commands.append(_pdf_text(48, v, "We look forward to meeting you. Best wishes!", "F2", 11, "0.31 0.27 0.89"))
+
+    v -= 42
+    commands.append("0.31 0.27 0.89 rg 48 {} 140 0.5 re f".format(v + 20))
+    commands.append(_pdf_text(48, v, "Aditi Sharma", "F2", 11, "0.16 0.2 0.28"))
+    commands.append(_pdf_text(48, v - 15, "HR & Talent Acquisition", "F1", 9, "0.35 0.4 0.48"))
+    commands.append(_pdf_text(48, v - 30, "ByteNova Technologies", "F1", 9, "0.35 0.4 0.48"))
+
+    commands.append(_pdf_text(48, 56, "ByteNova Technologies | 3rd Floor, Vijay Nagar, Indore, Madhya Pradesh", "F1", 8, "0.35 0.4 0.48"))
+    commands.append(_pdf_text(48, 44, "Phone: +91 731 400 1234 | Email: careers@bytenova.in", "F1", 8, "0.35 0.4 0.48"))
 
     stream = "\n".join(commands).encode("latin-1", "replace")
     objects = [
